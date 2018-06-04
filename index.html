@@ -4,7 +4,7 @@
 
   <!--  Meta  -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Geek Guides</title>
 
   <!--  Styles  -->
@@ -33,16 +33,15 @@
     </ul>
   </div>
 
-  <!-- Container for side-bar and content -->
-  <div class="content-row">
-    <!-- Side navigation menu -->
-    <div class="side-bar">
-      <button class="content-link" onclick="contentSelect(event, 'welcome-gallery')">Gallery</button>
-      <button class="content-link" onclick="contentSelect(event, 'welcome-library')">Library</button>
-      <button class="content-link" onclick="contentSelect(event, 'welcome-store')">Store</button>
-    </div>
+  <!-- Side navigation menu -->
+  <div class="side-bar">
+    <button class="content-link" onclick="contentSelect(event, 'welcome-gallery')">Gallery</button>
+    <button class="content-link" onclick="contentSelect(event, 'welcome-library')">Library</button>
+    <button class="content-link" onclick="contentSelect(event, 'welcome-store')">Store</button>
+  </div>
 
-    <!-- Content -->
+  <!-- Content -->
+  <div class="content-container">
     <!-- Welcoming Introduction -->
     <div id="welcome-intro" class="content">
       <h2>Welcome!</h2>
@@ -64,7 +63,7 @@
     </div>
     <!-- Store -->
     <div id="welcome-store" class="content"></div>
-
+    <div class="clear"></div>
   </div>
 
   <!-- Footer -->

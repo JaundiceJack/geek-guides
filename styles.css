@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+.clear{
+	clear: both;
+}
+
 html, body{
 	margin: 0;
 	padding: 0;
@@ -56,15 +60,14 @@ html, body{
 	transition: 0.5s;
 }
 
-.content-row{
-  	display: flex;
-  	flex-flow: row wrap;
-}
 
 /* side-bar */
 .side-bar{
 	background-color: #DDD;
   	border-right: 2px solid silver;
+  	float: left;
+  	width: 150px;
+  	height: 100%;
 }
 
 /* Style the buttons inside the side-bar */
@@ -79,10 +82,17 @@ html, body{
     background-color: #ddd;
 }
 
+.content-container{
+	flex-flow: column wrap;
+	margin-left: 150px;
+}
+
 /* content */
 .content{
 	background-color: #EEE;
 	padding: 25px 20px 25px 20px;
+	float: left;
+	display: block;
 }
 
 .content h2{
@@ -114,12 +124,10 @@ html, body{
 	transition: 0.5s;
 }
 
+
 /* when screen is less than 700px,
 place side navigation menu above the content */
 @media screen and (max-width: 700px){
-  	.content-row{
-    	flex-direction: column;
-  	}
 }
 
 /* when screen is less than 400px,

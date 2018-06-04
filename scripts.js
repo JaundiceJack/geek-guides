@@ -18,7 +18,3 @@ function contentSelect(evt, contentName){
 	document.getElementById(contentName).style.display = "block";
 	evt.currentTarget.className += " active";
 };
-
-function doit(){
-	alert("did it");
-};
