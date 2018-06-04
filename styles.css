@@ -33,7 +33,7 @@ html, body{
 }
 
 .selection-banner ul {
-  list-style-type: none;
+  	list-style-type: none;
 	overflow: hidden;
 	margin: 0;
 	padding: 0;
@@ -45,52 +45,46 @@ html, body{
 
 .selection-banner li a {
 	display:block;
-  color: white;
-  text-align: center;
-  padding: 16px;
-  text-decoration: none;
+  	color: white;
+  	text-align: center;
+  	padding: 16px;
+  	text-decoration: none;
 }
 
 .selection-banner li a:hover {
-  background-color: #555;
+  	background-color: #555;
 	transition: 0.5s;
 }
 
 .content-row{
-  display: flex;
-  flex-flow: row nowrap;
+  	display: flex;
+  	flex-flow: row nowrap;
 }
 
 /* side-bar */
 .side-bar{
+	overflow: hidden;
 	background-color: #DDD;
 	flex: 10%;
-  border-right: 2px solid silver;
+  	border-right: 2px solid silver;
 }
 
-.side-bar ul{
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
+/* Style the buttons inside the side-bar */
+.side-bar button {
+    background-color: inherit;
+    border: 0;
+    padding: 0;
+    padding: 14px 16px;
 }
 
-.side-bar li a{
-	display: block;
-	padding: 16px;
-	text-align: center;
-	text-decoration: none;
-	color: black;
-}
-
-.side-bar li a:hover{
-	background-color: silver;
-  transition: 0.3s;
+/* Change background color of buttons on hover */
+.side-bar button:hover {
+    background-color: #ddd;
 }
 
 /* content */
 .content{
 	background-color: #EEE;
-  flex: 90%;
 	padding: 25px 20px 25px 20px;
 }
 
