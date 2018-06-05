@@ -1,5 +1,5 @@
 * {
-  box-sizing: border-box;
+  	box-sizing: border-box;
 }
 
 .clear{
@@ -9,8 +9,8 @@
 html, body{
 	margin: 0;
 	padding: 0;
-  font-family: Arial, Monospace;
-  background-color: #000;
+  	font-family: Arial, Monospace;
+  	background-color: #000;
 }
 
 .title-banner{
@@ -23,12 +23,12 @@ html, body{
 .title-banner h1 a{
 	color: white;
 	font-family: Arial, Monospace;
-  text-decoration: none;
+  	text-decoration: none;
 }
 
-/* selection-banner */
-.selection-banner{
-  width: 100%;
+/* subject selection menu */
+.subject-nav{
+  	width: 100%;
 	background-color: #333;
 	text-align: center;
 	margin: 0;
@@ -36,18 +36,18 @@ html, body{
 	border-bottom: 3px solid silver;
 }
 
-.selection-banner ul {
+.subject-nav ul {
   	list-style-type: none;
 	overflow: hidden;
 	margin: 0;
 	padding: 0;
 }
 
-.selection-banner li {
-  display: inline-block;
+.subject-nav li {
+  	display: inline-block;
 }
 
-.selection-banner li a {
+.subject-nav li a {
 	display:block;
   	color: white;
   	text-align: center;
@@ -55,14 +55,14 @@ html, body{
   	text-decoration: none;
 }
 
-.selection-banner li a:hover {
+.subject-nav li a:hover {
   	background-color: #555;
 	transition: 0.5s;
 }
 
 
-/* side-bar */
-.side-bar{
+/* content selection side bar */
+.content-nav{
 	background-color: #DDD;
   	border-right: 2px solid silver;
   	float: left;
@@ -70,15 +70,15 @@ html, body{
   	height: 100%;
 }
 
-/* Style the buttons inside the side-bar */
-.side-bar button {
+/* Style the buttons inside the content-nav */
+.content-nav button {
 	display: block;
     background-color: inherit;
     padding: 14px 16px;
 }
 
 /* Change background color of buttons on hover */
-.side-bar button:hover {
+.content-nav button:hover {
     background-color: #ddd;
 }
 
@@ -91,7 +91,7 @@ html, body{
 .content{
 	background-color: #EEE;
 	padding: 25px 20px 25px 20px;
-	float: left;
+	margin-left: 150px;
 	display: block;
 }
 
@@ -127,13 +127,16 @@ html, body{
 
 /* when screen is less than 700px,
 place side navigation menu above the content */
+/*
 @media screen and (max-width: 700px){
 }
-
+*/
 /* when screen is less than 400px,
-place the selection-banner items on top of one another */
+place the subject-nav items on top of one another */
+/*
 @media screen and (max-width: 400px){
-  	.selection-banner li{
+  	.subject-nav li{
     	display: block;
   	}
 }
+*/
