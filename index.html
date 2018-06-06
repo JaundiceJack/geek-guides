@@ -26,21 +26,20 @@
     </header>
 
     <!-- Top navigation menu -->
-    <nav class="selection-banner">
-      <ul>
-        <li><a href="arduino.html">Arduino</a></li>
-        <li><a href="raspberry.html">Raspberry Pi</a></li>
-        <li><a href="linux.html">Linux</a></li>
-      </ul>
+    <nav class="subject-nav">
+      <a href="arduino.html">Arduino</a>
+      <a href="raspberry.html">Raspberry Pi</a>
+      <a href="linux.html">Linux</a>
     </nav>
   </div> <!-- end flex-container-1 -->
 
   <div class="flex-container-2">
     <!-- Side navigation menu -->
-    <aside class="side-bar">
-      <button class="content-link" onclick="contentSelect(event, 'welcome-gallery')">Gallery</button><br>
-      <button class="content-link" onclick="contentSelect(event, 'welcome-library')">Library</button><br>
-      <button class="content-link" onclick="contentSelect(event, 'welcome-store')">Store</button><br>
+    <aside class="content-nav">
+      <button class="content-link" onclick="contentSelect(event, 'welcome-intro')">Intro</button>
+      <button class="content-link" onclick="contentSelect(event, 'welcome-gallery')">Gallery</button>
+      <button class="content-link" onclick="contentSelect(event, 'welcome-library')">Library</button>
+      <button class="content-link" onclick="contentSelect(event, 'welcome-store')">Store</button>
     </aside>
     <div class="flex-container-content">
       <!-- Content -->
@@ -54,9 +53,9 @@
         <p>More content.</p>
       </article>
       <!-- Gallery -->
-      <article id="welcome-gallery" class="content"></article>
+      <article id="welcome-gallery" class="content hide"></article>
       <!-- Library -->
-      <article id="welcome-library" class="content ">
+      <article id="welcome-library" class="content hide">
         <h2>Free learning resources</h2>
         <dl>
           <dt>Git & GitHub Usage</dt>
@@ -64,14 +63,16 @@
         </dl>
       </article>
       <!-- Store -->
-      <article id="welcome-store" class="content"></article>
+      <article id="welcome-store" class="content hide"></article>
     </div> <!-- end flex-container-content -->
   </div> <!-- end flex-container-2 -->
 
   <div class="flex-container-3">
     <!-- Footer -->
     <footer class="footer">
-      <span><a href="#">About</a><a href="">Contact</a><a href="">GitHub</a></span>
+      <a href="#">About</a>
+      <a href="">Contact</a>
+      <a href="">GitHub</a>
     </footer>
   </div>
 
