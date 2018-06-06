@@ -5,20 +5,18 @@
 html, body{
 	margin: 0;
 	padding: 0;
+  width: 100%;
   font-family: Arial, Monospace;
   background-color: #000;
-  width: 100%;
 }
 
-.flex-container-1{
-  display: flex;
-  flex-flow: column nowrap;
-}
 
-/* site intro banner */
+/*--------------*/
+/* intro banner */
+/*--------------*/
 .title-banner{
   background-color: #000;
-  color: white;
+  color: #FFF;
 	padding: 25px 0;
   width: 100%;
   text-align: center;
@@ -29,10 +27,12 @@ html, body{
   color: #FFF;
 }
 
-/* subject selection menu */
+
+/*-------------*/
+/* top nav bar */
+/*-------------*/
 .subject-nav{
 	background-color: #333;
-	border-bottom: 3px solid silver;
   width: 100%;
   text-align: center;
 }
@@ -51,24 +51,32 @@ html, body{
 }
 
 
-
-.flex-container-2 {
+/*------------*/
+/* Containers */
+/*------------*/
+.flex-container-main {
   display: flex;
   flex-flow: row wrap;
+  background-color: #DDF;
+
+  justify-content: space-around;
 }
 
-/* content selection side bar */
+
+/*--------------*/
+/* side nav bar */
+/*--------------*/
 .content-nav{
-	background-color: #ddd;
-  border-right: 2px solid silver;
-
+	background-color: #EEE;
+  text-align: center;
+  
   flex: 1;
+  margin: 10px 5px 10px 10px;
 }
 
-/* Style the buttons inside the content-nav */
 .content-nav button {
 	display: block;
-  background-color: #ddd;
+  background-color: inherit;
   padding: 14px 16px;
   width: 100%;
   border: 0;
@@ -80,50 +88,47 @@ html, body{
   transition: 0.3s;
 }
 
-.flex-container-content{
-  display: flex;
-  flex-flow: column nowrap;
-  
-  flex: 6;
-}
 
+/*---------*/
 /* content */
+/*---------*/
 .hide {
   display: none;
 }
 
-.content{
+.content {
 	background-color: #EEE;
 	padding: 25px 20px 25px 20px;
-
-  flex-grow: 1;
+  
+  flex: 8;
+  margin: 10px 10px 10px 5px;
 }
 
-.content h2{
+.content h2 {
 	color: #000;
 }
 
-.content p{
+.content p {
 	color: #111;
 	padding-left: 10px;
 }
 
-.flex-container-3{
-  display: flex;
-  flex-flow: column nowrap;
+.content dl {
+  padding-left: 10px;
 }
 
+
+/*--------*/
 /* footer */
-.footer{
+/*--------*/
+.footer {
 	background-color: #333;
 	text-align: center;
-	border-top: 3px solid silver;
-
 }
 
 .footer a {
   text-decoration: none;
-  color: white;
+  color: #FFF;
   padding: 16px;
 
   display: inline-block;
@@ -134,14 +139,14 @@ html, body{
   transition: 0.5s;
 }
 
-@media screen and (max-width: 700px){
-  .flex-container-2{
-    flex-direction: column;
-  }
+@media screen and (max-width: 400px){
+  .flex-container-main {flex-direction: column;}
+  .subject-nav a {display: block;}
+  .footer a {display: block;}
 }
 
-@media screen and (max-width: 400px){
-  .subject-nav a{
-    display: block;
-  }
+@media screen and (max-width: 700px){
+  .flex-container-main {flex-direction: column;}
+  .content-nav {margin: 10px 10px 5px 10px;}
+  .content {margin: 5px 10px 10px 10px;}
 }
