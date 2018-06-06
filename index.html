@@ -18,59 +18,65 @@
 
 </head>
 <body>
-  <!-- Site intro banner -->
-  <div class="title-banner">
-    <h1><a href="index.html">Geek Guides</a></h1>
-  </div>
+  <!-- order content with a flex container -->
+  <div class="flex-container-1">
+    <!-- Site intro banner -->
+    <header class="title-banner">
+      <h1><a href="index.html">Geek Guides</a></h1>
+    </header>
 
-  <!-- Top navigation menu -->
-  <div class="subject-nav">
-    <ul>
-      <li><a href="arduino.html">Arduino</a></li>
-      <li><a href="raspberry.html">Raspberry Pi</a></li>
-      <li><a href="linux.html">Linux</a></li>
-    </ul>
-  </div>
+    <!-- Top navigation menu -->
+    <nav class="selection-banner">
+      <ul>
+        <li><a href="arduino.html">Arduino</a></li>
+        <li><a href="raspberry.html">Raspberry Pi</a></li>
+        <li><a href="linux.html">Linux</a></li>
+      </ul>
+    </nav>
+  </div> <!-- end flex-container-1 -->
 
-  <div class="wrapper">
+  <div class="flex-container-2">
     <!-- Side navigation menu -->
-    <div class="content-nav">
-      <button class="content-link" onclick="contentSelect(event, 'welcome-gallery')">Gallery</button>
-      <button class="content-link" onclick="contentSelect(event, 'welcome-library')">Library</button>
-      <button class="content-link" onclick="contentSelect(event, 'welcome-store')">Store</button>
-    </div>
+    <aside class="side-bar">
+      <button class="content-link" onclick="contentSelect(event, 'welcome-gallery')">Gallery</button><br>
+      <button class="content-link" onclick="contentSelect(event, 'welcome-library')">Library</button><br>
+      <button class="content-link" onclick="contentSelect(event, 'welcome-store')">Store</button><br>
+    </aside>
+    <div class="flex-container-content">
+      <!-- Content -->
+      <!-- Welcoming Introduction -->
+      <article id="welcome-intro" class="content">
+        <h2>Welcome!</h2>
+        <p>I've collected step-by-step how-to's and guides for nerds.</p>
+        <p>More words.</p>
+        <p>Even more words.</p>
+        <h2>Another Section</h2>
+        <p>More content.</p>
+      </article>
+      <!-- Gallery -->
+      <article id="welcome-gallery" class="content"></article>
+      <!-- Library -->
+      <article id="welcome-library" class="content ">
+        <h2>Free learning resources</h2>
+        <dl>
+          <dt>Git & GitHub Usage</dt>
+          <dd><a href="https://www.youtube.com/watch?v=SWYqp7iY_Tc">- Youtube: Traversy Media makes it easy</a></dd>
+        </dl>
+      </article>
+      <!-- Store -->
+      <article id="welcome-store" class="content"></article>
+    </div> <!-- end flex-container-content -->
+  </div> <!-- end flex-container-2 -->
 
-    <!-- Content -->
-
-    <!-- Welcoming Introduction -->
-    <div id="welcome-intro" class="content">
-      <h2>Welcome!</h2>
-      <p>I've collected step-by-step how-to's and guides for nerds.</p>
-      <p>More words.</p>
-      <p>Even more words.</p>
-      <h2>Another Section</h2>
-      <p>More content.</p>
-    </div>
-    <!-- Gallery -->
-    <div id="welcome-gallery" class="content"></div>
-    <!-- Library -->
-    <div id="welcome-library" class="content">
-      <h2>Free learning resources</h2>
-      <dl>
-        <dt>Git & GitHub Usage</dt>
-        <dd><a href="https://www.youtube.com/watch?v=SWYqp7iY_Tc">- Youtube: Traversy Media makes it easy</a></dd>
-      </dl>
-    </div>
-    <!-- Store -->
-    <div id="welcome-store" class="content"></div>
-  </div>
-
-  <!-- Footer -->
-  <div class="footer">
-    <span><a href="#">About</a><a href="">Contact</a><a href="">GitHub</a></span>
+  <div class="flex-container-3">
+    <!-- Footer -->
+    <footer class="footer">
+      <span><a href="#">About</a><a href="">Contact</a><a href="">GitHub</a></span>
+    </footer>
   </div>
 
   <!-- Scripts -->
   <script type="text/javascript" src="scripts.js"></script>
+  <!-- <script type="text/javascript" src="scripts.js"></script> -->
 </body>
 </html>

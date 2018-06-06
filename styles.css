@@ -1,98 +1,82 @@
 * {
-  	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html, body{
 	margin: 0;
 	padding: 0;
-  	font-family: Arial, Monospace;
-  	background-color: #000;
+  font-family: Arial, Monospace;
+  background-color: #000;
+  width: 100%;
 }
 
-.wrapper{
+.flex-container-1{
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center;
+  background-color: #111;
 }
 
-.title-banner{
-	background-color: #000;
-	width: 100%;
-	text-align: center;
+/* site intro banner */
+.title-banner header h1 a{
+	background-color: #111;
+  color: white;
 	padding: 40px 0 40px 0;
-
-	clear: left;
-}
-
-.title-banner h1 a{
-	color: white;
-	font-family: Arial, Monospace;
-  	text-decoration: none;
+  width: 100%;
+  text-decoration: none;
 }
 
 /* subject selection menu */
 .subject-nav{
-  	width: 100%;
-	background-color: #333;
-	text-align: center;
-	margin: 0;
-	padding: 0;
+	background-color: rgb(100,100,100);
 	border-bottom: 3px solid silver;
-
-	clear: left;
+  width: 100%;
 }
 
-.subject-nav ul {
-  	list-style-type: none;
-	overflow: hidden;
-	margin: 0;
-	padding: 0;
+.subject-nav ul, li {
+  list-style-type: none;
+  display: inline-block;
 }
 
-.subject-nav li {
-  	display: inline-block;
+.flex-container-2 {
+  display: flex;
+  flex-flow: row wrap;
 }
-
-.subject-nav li a {
-	display:block;
-  	color: white;
-  	text-align: center;
-  	padding: 16px;
-  	text-decoration: none;
-}
-
-.subject-nav li a:hover {
-  	background-color: #555;
-	transition: 0.5s;
-}
-
 
 /* content selection side bar */
 .content-nav{
 	background-color: #ddd;
-  	border-right: 2px solid silver;
-  	float: left;
-  	width: 150px;
+  border-right: 2px solid silver;
+
+  flex: 1;
 }
 
 /* Style the buttons inside the content-nav */
 .content-nav button {
 	display: block;
-    background-color: #ddd;
-    padding: 14px 16px;
-    width: 100%;
-    border: 0;
-    outline: 0;
+  background-color: #ddd;
+  padding: 14px 16px;
+  width: 100%;
+  border: 0;
+  outline: 0;
 }
 
-/* Change background color of buttons on hover */
 .content-nav button:hover {
     background-color: #999;
     transition: 0.3s;
+}
+
+.flex-container-content{
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 /* content */
 .content{
 	background-color: #EEE;
 	padding: 25px 20px 25px 20px;
-	margin-left: 150px;
+
+  flex: 2;
 }
 
 .content h2{
@@ -100,45 +84,18 @@ html, body{
 }
 
 .content p{
-	color: EEE;
+	color: #eee;
 	padding-left: 10px;
+}
+
+.flex-container-3{
+  display: flex;
+  flex-flow column nowrap;
 }
 
 /* footer */
 .footer{
 	background-color: #333;
 	text-align: center;
-	padding: 0;
-	margin: 0;
 	border-top: 3px solid silver;
-
-	clear: left;
 }
-.footer span a{
-  	margin: 0;
-	padding: 16px;
-	color: white;
-  	text-decoration: none;
-  	display: inline-block;
-}
-.footer a:hover{
-	background-color: #555;
-	transition: 0.5s;
-}
-
-
-/* when screen is less than 700px,
-place side navigation menu above the content */
-/*
-@media screen and (max-width: 700px){
-}
-*/
-/* when screen is less than 400px,
-place the subject-nav items on top of one another */
-/*
-@media screen and (max-width: 400px){
-  	.subject-nav li{
-    	display: block;
-  	}
-}
-*/
