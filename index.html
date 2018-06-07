@@ -10,68 +10,99 @@
   <!--  Styles  -->
   <link rel="stylesheet" href="styles.css">
   <!-- Bootstrap 4 CSS -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
   <!-- Bootstrap 4 JS -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <!-- jQuery -->
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 
 </head>
-<body>
+<body class="bg-dark">
+  <div class="container-fluid p-0 bg-dark">
+    
+    <!-- Site intro banner -->
+    <header class="bg-dark p-4 m-0 text-center">
+      <h1>
+        <a class="text-white" 
+           style="text-decoration: none" 
+           href="index.html">Geek Guides</a>
+      </h1>
+    </header>
 
-  <!-- Site intro banner -->
-  <header class="title-banner">
-    <h1><a href="index.html">Geek Guides</a></h1>
-  </header>
+    <!-- Top navigation menu -->
+    <nav class="text-center p-3" style="background-color: #666">
+      <a class="text-white p-3" 
+         style="text-decoration: none" 
+         href="arduino.html">Arduino</a>
+      <a class="text-white p-3" 
+         style="text-decoration: none" 
+         href="raspberry.html">Raspberry Pi</a>
+      <a class="text-white p-3" 
+         style="text-decoration: none" 
+         href="linux.html">Linux</a>
+    </nav>
 
-  <!-- Top navigation menu -->
-  <nav class="subject-nav">
-    <a href="arduino.html">Arduino</a>
-    <a href="raspberry.html">Raspberry Pi</a>
-    <a href="linux.html">Linux</a>
-  </nav>
-
-  <div class="flex-container-main">
+    <div class="row no-gutters ml-2 mt-2 mb-2">
       <!-- Side navigation menu -->
-    <aside class="content-nav">
-      <button class="content-link" onclick="contentSelect(event, 'welcome-intro')">Intro</button>
-      <button class="content-link" onclick="contentSelect(event, 'welcome-gallery')">Gallery</button>
-      <button class="content-link" onclick="contentSelect(event, 'welcome-library')">Library</button>
-      <button class="content-link" onclick="contentSelect(event, 'welcome-store')">Store</button>
-    </aside>
+      <aside class="col-sm-1 bg-light rounded">
+        <a class="btn text-left text-dark d-block content-link" 
+           role="button" 
+           onclick="contentSelect(event, 'welcome-intro')" 
+           href="#">Intro</a>
+        <a class="btn text-left text-dark d-block content-link" 
+           role="button" 
+           onclick="contentSelect(event, 'welcome-gallery')" 
+           href="#">Gallery</a>
+        <a class="btn text-left text-dark d-block content-link" 
+           role="button" 
+           onclick="contentSelect(event, 'welcome-library')" 
+           href="#">Library</a>
+        <a class="btn text-left text-dark d-block content-link" 
+           role="button" 
+           onclick="contentSelect(event, 'welcome-store')" 
+           href="#">Store</a>
+      </aside>
 
+      <!-- Content -->
+      <div class="col-sm-11">  
+        <!-- Welcoming Introduction -->
+         <article id="welcome-intro" class="rounded content">
+          <h2>Welcome!</h2>
+          <p>I've collected step-by-step how-to's and guides for nerds.</p>
+          <p>More words.</p>
+          <p>Even more words.</p>
+          <h2>Another Section</h2>
+          <p>More content.</p>
+        </article>
+        <!-- Gallery -->
+        <article id="welcome-gallery" class="rounded content hide"></article>
+        <!-- Library -->
+        <article id="welcome-library" class="rounded content hide">
+          <h2>Free learning resources</h2>
+          <dl>
+            <dt>Git & GitHub Usage</dt>
+            <dd><a href="https://www.youtube.com/watch?v=SWYqp7iY_Tc" target="_blank">- Youtube: Traversy Media makes it easy</a></dd>
+            <dd><a href="https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf" target="_blank">- PDF: Command Cheatsheet</a></dd>
+          </dl>
+        </article>
+        <!-- Store -->
+        <article id="welcome-store" class="rounded content hide"></article>
+      </div>
+    </div> <!-- end flex-container-main -->
 
-    <!-- Content -->  
-    <!-- Welcoming Introduction -->
-     <article id="welcome-intro" class="content">
-      <h2>Welcome!</h2>
-      <p>I've collected step-by-step how-to's and guides for nerds.</p>
-      <p>More words.</p>
-      <p>Even more words.</p>
-      <h2>Another Section</h2>
-      <p>More content.</p>
-    </article>
-    <!-- Gallery -->
-    <article id="welcome-gallery" class="content hide"></article>
-    <!-- Library -->
-    <article id="welcome-library" class="content hide">
-      <h2>Free learning resources</h2>
-      <dl>
-        <dt>Git & GitHub Usage</dt>
-        <dd><a href="https://www.youtube.com/watch?v=SWYqp7iY_Tc" target="_blank">- Youtube: Traversy Media makes it easy</a></dd>
-        <dd><a href="https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf" target="_blank">- PDF: Command Cheatsheet</a></dd>
-      </dl>
-    </article>
-    <!-- Store -->
-    <article id="welcome-store" class="content hide"></article>
-  </div> <!-- end flex-container-main -->
-
-  <!-- Footer -->
-  <footer class="footer">
-    <a href="#">About</a>
-    <a href="">Contact</a>
-    <a href="https://github.com/JaundiceJack" target="_blank">GitHub</a>
-  </footer> 
+    <!-- Footer -->
+    <footer class="text-center p-3" style="background-color: #666">
+      <a class="text-white p-3"
+         style="text-decoration: none" 
+         href="#">About</a>
+      <a class="text-white p-3"
+         style="text-decoration: none" 
+         href="#">Contact</a>
+      <a class="text-white p-3"
+         style="text-decoration: none" 
+         href="https://github.com/JaundiceJack" target="_blank">GitHub</a>
+    </footer> 
+  </div> <!-- End container-fluid -->
 
   <!-- Scripts -->
   <script type="text/javascript" src="scripts.js"></script>

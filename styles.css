@@ -1,93 +1,17 @@
-* {
-  box-sizing: border-box;
-}
-
-html, body{
-	margin: 0;
-	padding: 0;
-  width: 100%;
-  font-family: Arial, Monospace;
-  background-color: #000;
-}
-
-
-/*--------------*/
-/* intro banner */
-/*--------------*/
-.title-banner{
-  background-color: #000;
-  color: #FFF;
-	padding: 25px 0;
-  width: 100%;
-  text-align: center;
-}
-
-.title-banner a {
-  text-decoration: none;
-  color: #FFF;
-}
-
-
-/*-------------*/
-/* top nav bar */
-/*-------------*/
-.subject-nav{
-	background-color: #333;
-  width: 100%;
-  text-align: center;
-}
-
-.subject-nav a {
-  color: #FFF;
-  text-decoration: none;
-  padding: 16px;
-
-  display: inline-block;
-}
-
-.subject-nav a:hover {
-  background-color: #666;
+nav a:hover{
+  background-color: #999;
   transition: 0.5s;
 }
 
-
-/*------------*/
-/* Containers */
-/*------------*/
-.flex-container-main {
-  display: flex;
-  flex-flow: row wrap;
-  background-color: #DDF;
-
-  justify-content: space-around;
-}
-
-
-/*--------------*/
-/* side nav bar */
-/*--------------*/
-.content-nav{
-	background-color: #EEE;
-  text-align: center;
-  
-  flex: 1;
-  margin: 10px 5px 10px 10px;
-}
-
-.content-nav button {
-	display: block;
-  background-color: inherit;
-  padding: 14px 16px;
-  width: 100%;
-  border: 0;
-  outline: 0;
-}
-
-.content-nav button:hover {
+aside a:hover{
   background-color: #999;
   transition: 0.3s;
 }
 
+footer a:hover{
+  background-color: #999;
+  transition: 0.5s;
+}
 
 /*---------*/
 /* content */
@@ -137,6 +61,10 @@ html, body{
 .footer a:hover {
   background-color: #666;
   transition: 0.5s;
+}
+
+.content-link{
+  display: block;
 }
 
 @media screen and (max-width: 400px){
