@@ -12,9 +12,11 @@ function contentSelect(evt, contentName){
 	link = document.getElementsByClassName("content-link"); //$(".content-link");
 	for(i=0; i < link.length; i++){
 		link[i].className = link[i].className.replace(" active", "");
+		link[i].className = link[i].className.replace(" bg-primary", "");
 	}
 
 	// Show the current tab, and add an "active" class to the button that opened the tab
 	document.getElementById(contentName).style.display = "block";
 	evt.currentTarget.className += " active";
+	evt.currentTarget.className += " bg-primary";
 };
