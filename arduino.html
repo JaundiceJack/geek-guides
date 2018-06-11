@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geek Guides: Arduino</title>
+
+  <!--  Styles  -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Bootstrap 4 CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
+  <!-- Bootstrap 4 JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body class="bg-dark">
+  <div class="container-fluid p-0 bg-dark">
+    
+    <!-- Site intro banner -->
+    <header class="bg-dark p-4 m-0 text-center">
+      <h1>
+        <a class="text-white" 
+           style="text-decoration: none" 
+           href="index.html">Geek Guides</a>
+      </h1>
+    </header>
+
+    <!-- Top navigation menu -->
+    <nav id="top-nav" class="text-center p-3">
+      <!-- Arduino Link -->
+      <a class="text-white p-3" 
+         style="text-decoration: none" 
+         href="arduino.html">Arduino</a>
+      <!-- Raspberry Pi Link -->
+      <a class="text-white p-3" 
+         style="text-decoration: none" 
+         href="raspberry.html">Raspberry Pi</a>
+      <!-- Linux Link -->
+      <a class="text-white p-3" 
+         style="text-decoration: none" 
+         href="linux.html">Linux</a>
+    </nav>
+
+    <div class="row no-gutters justify-content-around">
+      <!-- Side navigation menu -->
+      <aside id="side-nav" class="col-sm-2 bg-light rounded">
+        
+        <!-- Welcome Link -->
+        <a class="btn btn-block text-dark content-link" 
+           role="button" 
+           onclick="contentSelect(event, 'arduino-intro')" 
+           href="#">Intro</a>
+        <hr class="p-0 m-0">
+
+        <!-- Project #1 Link -->
+        <a class="btn btn-block text-dark content-link" 
+           role="button" 
+           onclick="contentSelect(event, 'project1')" 
+           href="#">Project #1: Blinking LED</a>
+        <hr class="p-0 m-0">
+
+        <!-- Project #2 Link -->
+        <a class="btn btn-block text-dark content-link" 
+           role="button" 
+           onclick="contentSelect(event, 'project2')" 
+           href="#">Project #2: Traffic Lights</a>
+        <hr class="p-0 m-0">
+
+        <!-- Project #3 Link -->
+        <a class="btn btn-block text-dark content-link" 
+           role="button" 
+           onclick="contentSelect(event, 'project3')" 
+           href="#">Project #3: Annoyatron</a>
+      </aside>
+
+      <!-- Content -->
+      <div id="content" class="col-sm bg-light rounded">  
+        
+        <!-- Welcoming Introduction -->
+         <article id="arduino-intro" class="rounded content">
+          <h2>Arduino Projects</h2>
+          <p>To the left you can find my collected arduino projects.</p>
+        </article>
+        
+        <!-- Project #1: Blinking LED -->
+        <article id="project1" class="rounded content hide">
+          <h2>Project #1: Blinking LED</h2>
+          <p>In this project we'll get a light to blink on and off, and later modify it using Pulse Width Modulation (PWM) to make it fade in and out instead.</p>
+          <img src="#" height="100px" width="100px" alt="Blinking LED Image">
+        </article>
+        
+        <!-- Project #2: Stop-Light System -->
+        <article id="project2" class="rounded content hide">
+          <h2>Project #2: Stop-Light System</h2>
+        </article>
+        
+        <!-- Project #3: Annoyatron -->
+        <article id="project3" class="rounded content hide">
+          <h2>Project #3: Annoyatron</h2>
+        </article>
+      </div> <!-- end content -->
+    </div> <!-- end row -->
+
+    <!-- Footer -->
+    <footer class="text-center p-3">
+      <!-- About Myself Link -->
+      <a class="text-white p-3"
+         style="text-decoration: none" 
+         href="#">About</a>
+      <!-- Contact Me Link -->
+      <a class="text-white p-3"
+         style="text-decoration: none" 
+         href="#">Contact</a>
+      <!-- Visit My GitHub Link -->
+      <a class="text-white p-3"
+         style="text-decoration: none" 
+         href="https://github.com/JaundiceJack" target="_blank">GitHub</a>
+    </footer> 
+  </div> <!-- End container-fluid -->
+
+  <!-- Scripts -->
+  <script type="text/javascript" src="scripts.js"></script>
+
+</body>
+</html>
