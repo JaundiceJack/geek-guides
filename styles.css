@@ -3,6 +3,10 @@
   /* to use, var(--primary-color, black)*/
 }
 
+.noShadow {
+  box-shadow: none !important;
+}
+
 #contentContainer {
   background: linear-gradient(90deg, #123, #111, #123);
 }
@@ -20,6 +24,10 @@ article{
   padding: 20px;
 }
 
+article button {
+  background-color: #ABC;
+}
+
 footer {
   background: linear-gradient(90deg, #111, #666, #111);
 }
@@ -29,9 +37,11 @@ nav a:hover{
   transition: 0.5s;
 }
 
+/* The javascript interferes with the hovered link changing color */
 aside a:hover{
   background-color: #999;
   transition: 0.3s;
+  transform: scale(1.05);
 }
 
 footer a:hover{
@@ -44,6 +54,7 @@ footer a:hover{
 }
 
 @media screen and (max-width: 400px) {
-  #side-nav a{text-align: center}
+  #side-nav a{text-align: center;}
   #top-nav a{display: block;}
+  footer a{display: block;}
 }
