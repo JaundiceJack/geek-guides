@@ -1,8 +1,26 @@
 :root {
   --primary-color: #666;
+  /* to use, var(--primary-color, black)*/
+}
+
+#contentContainer {
+  background: linear-gradient(90deg, #123, #111, #123);
+}
+
+header h1 {
+  font-family: 'Orbitron', Monospace;
 }
 
 nav {
+  background: linear-gradient(90deg, #111, #666, #111);
+}
+
+
+article{
+  padding: 20px;
+}
+
+footer {
   background: linear-gradient(90deg, #111, #666, #111);
 }
 
@@ -11,21 +29,9 @@ nav a:hover{
   transition: 0.5s;
 }
 
-aside {
-  padding: 20px 0 20px 0;
-}
-
 aside a:hover{
   background-color: #999;
   transition: 0.3s;
-}
-
-article{
-  padding: 20px;
-}
-
-footer {
-  background: linear-gradient(90deg, #111, #666, #111);
 }
 
 footer a:hover{

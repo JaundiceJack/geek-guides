@@ -9,12 +9,17 @@
 
   <!--  Styles  -->
   <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome Icons -->
+  <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet"> 
   <!-- Bootstrap 4 CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
   <!-- Bootstrap 4 JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <!-- jQuery -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 </head>
 <body class="bg-dark">
@@ -42,9 +47,9 @@
          href="linux.html">Linux</a>
     </nav>
 
-    <div class="row no-gutters justify-content-around">
+    <div id="contentContainer" class="row no-gutters justify-content-around">
       <!-- Side navigation menu -->
-      <aside id="side-nav" class="col-sm-1 bg-light rounded">
+      <aside id="side-nav" class="col-sm-auto bg-light rounded m-2">
         <a class="btn btn-block text-dark content-link" 
            role="button" 
            onclick="contentSelect(event, 'linux-intro')" 
@@ -67,16 +72,14 @@
       </aside>
 
       <!-- Content -->
-      <div id="content" class="col-sm bg-light rounded">  
+      <div id="content" class="col-sm bg-light rounded m-2">  
         
         <!-- Welcoming Introduction -->
          <article id="linux-intro" class="rounded content">
           <h2>Gnome GUI Guides</h2>
           <p>Enable contrib & non-free repositories</p>
-          <p>Disable activities mouseover/hot-mouse (I found it annoyingly easy to do by accident)</p>
+          <p>Disable activities mouseover/hot corner (I found it annoyingly easy to do by accident)</p>
           <p>Get a windows bar</p>
-          <h2>KDE GUI Guides</h2>
-          <p>Coming soonish...</p>
         </article>
         
         <!-- Gnome how-to #1 -->
@@ -94,6 +97,11 @@
           <h2>How to get and configure a windows bar:</h2>
         </article>
       </div> <!-- end content -->
+
+            <!-- right side bar -->
+      <div class="col-sm-1 bg-light rounded m-2">
+
+      </div>
     </div> <!-- end row -->
 
     <!-- Footer -->

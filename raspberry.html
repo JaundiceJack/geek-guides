@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geek Guides: Raspberry Pi</title>
+
+  <!--  Styles  -->
+  <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome Icons -->
+  <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet"> 
+  <!-- Bootstrap 4 CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
+  <!-- Bootstrap 4 JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body class="bg-dark">
+  <div class="container-fluid p-0 bg-dark">
+
+    <!-- Site intro banner -->
+    <header class="bg-dark p-4 m-0 text-center">
+      <h1>
+        <a class="text-white"
+           style="text-decoration: none"
+           href="index.html">Geek Guides</a>
+      </h1>
+    </header>
+
+    <!-- Top navigation menu -->
+    <nav id="top-nav" class="text-center p-3">
+      <a class="text-white p-3"
+         style="text-decoration: none"
+         href="arduino.html">Arduino</a>
+      <a class="text-white p-3"
+         style="text-decoration: none"
+         href="raspberry.html">Raspberry Pi</a>
+      <a class="text-white p-3"
+         style="text-decoration: none"
+         href="linux.html">Linux</a>
+    </nav>
+
+    <div id="contentContainer" class="row no-gutters justify-content-around">
+      <!-- Side navigation menu -->
+      <aside id="side-nav" class="col-sm-auto bg-light rounded m-2">
+        <a class="btn btn-block text-dark content-link"
+           role="button"
+           onclick="contentSelect(event, 'welcome-intro')"
+           href="#">Intro</a>
+      </aside>
+
+      <!-- Content -->
+      <div id="content" class="col-sm bg-light rounded m-2">
+
+        <!-- Welcoming Introduction -->
+        <article id="welcome-intro" class="rounded content">
+        
+        </article>
+      </div> <!-- end content -->
+
+      <!-- right side bar -->
+      <div class="col-sm-1 bg-light rounded m-2">
+
+      </div>
+    </div> <!-- end row -->
+
+    <!-- Footer -->
+    <footer class="text-center p-3">
+      <a class="text-white p-3"
+         style="text-decoration: none"
+         href="#">About</a>
+      <a class="text-white p-3"
+         style="text-decoration: none"
+         href="#">Contact</a>
+      <a class="text-white p-3"
+         style="text-decoration: none"
+         href="https://github.com/JaundiceJack" target="_blank">GitHub</a>
+    </footer>
+  </div> <!-- End container-fluid -->
+
+  <!-- Scripts -->
+  <script type="text/javascript" src="scripts.js"></script>
+
+</body>
+</html>

@@ -9,12 +9,17 @@
 
   <!--  Styles  -->
   <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet"> 
   <!-- Bootstrap 4 CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
   <!-- Bootstrap 4 JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <!-- jQuery -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 </head>
 <body class="bg-dark">
@@ -42,9 +47,9 @@
          href="linux.html">Linux</a>
     </nav>
 
-    <div class="row no-gutters justify-content-around">
+    <div id="contentContainer" class="row no-gutters justify-content-around">
       <!-- Side navigation menu -->
-      <aside id="side-nav" class="col-sm-1 bg-light rounded m-2">
+      <aside id="side-nav" class="col-sm-auto bg-light rounded m-2">
         <a class="btn btn-block text-dark content-link"
            role="button"
            onclick="contentSelect(event, 'welcome-intro')"

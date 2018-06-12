@@ -18,5 +18,15 @@ function contentSelect(evt, contentName){
 	// Show the current tab, and add an "active" class to the button that opened the tab
 	document.getElementById(contentName).style.display = "block";
 	evt.currentTarget.className += " active";
-	evt.currentTarget.style.background = "#666";
+	evt.currentTarget.style.background = "#ABC";
 };
+
+function contentToggle(contentId){
+	var content = document.getElementById(contentId);
+	if (content.style.display === "none"){
+		content.style.display = "block";
+	}
+	else{
+		content.style.display = "none";
+	}
+}
