@@ -2,16 +2,8 @@
   --primary-color: #666;
 }
 
-#side-nav {
-  margin: 10px;
-}
-
-#content {
-  margin: 10px;
-}
-
 nav {
-  background-color: var(--primary-color);
+  background: linear-gradient(90deg, #111, #666, #111);
 }
 
 nav a:hover{
@@ -33,7 +25,7 @@ article{
 }
 
 footer {
-  background-color: var(--primary-color);
+  background: linear-gradient(90deg, #111, #666, #111);
 }
 
 footer a:hover{
@@ -49,4 +41,3 @@ footer a:hover{
   #side-nav a{text-align: center}
   #top-nav a{display: block;}
 }
-

@@ -19,56 +19,56 @@
 </head>
 <body class="bg-dark">
   <div class="container-fluid p-0 bg-dark">
-    
+
     <!-- Site intro banner -->
     <header class="bg-dark p-4 m-0 text-center">
       <h1>
-        <a class="text-white" 
-           style="text-decoration: none" 
+        <a class="text-white"
+           style="text-decoration: none"
            href="index.html">Geek Guides</a>
       </h1>
     </header>
 
     <!-- Top navigation menu -->
     <nav id="top-nav" class="text-center p-3">
-      <a class="text-white p-3" 
-         style="text-decoration: none" 
+      <a class="text-white p-3"
+         style="text-decoration: none"
          href="arduino.html">Arduino</a>
-      <a class="text-white p-3" 
-         style="text-decoration: none" 
+      <a class="text-white p-3"
+         style="text-decoration: none"
          href="raspberry.html">Raspberry Pi</a>
-      <a class="text-white p-3" 
-         style="text-decoration: none" 
+      <a class="text-white p-3"
+         style="text-decoration: none"
          href="linux.html">Linux</a>
     </nav>
 
     <div class="row no-gutters justify-content-around">
       <!-- Side navigation menu -->
-      <aside id="side-nav" class="col-sm-1 bg-light rounded">
-        <a class="btn btn-block text-dark content-link" 
-           role="button" 
-           onclick="contentSelect(event, 'welcome-intro')" 
+      <aside id="side-nav" class="col-sm-1 bg-light rounded m-2">
+        <a class="btn btn-block text-dark content-link"
+           role="button"
+           onclick="contentSelect(event, 'welcome-intro')"
            href="#">Intro</a>
         <hr class="p-0 m-0">
-        <a class="btn text-dark d-block content-link" 
-           role="button" 
-           onclick="contentSelect(event, 'welcome-gallery')" 
+        <a class="btn text-dark d-block content-link"
+           role="button"
+           onclick="contentSelect(event, 'welcome-gallery')"
            href="#">Gallery</a>
         <hr class="p-0 m-0">
-        <a class="btn text-dark d-block content-link" 
-           role="button" 
-           onclick="contentSelect(event, 'welcome-library')" 
+        <a class="btn text-dark d-block content-link"
+           role="button"
+           onclick="contentSelect(event, 'welcome-library')"
            href="#">Library</a>
         <hr class="p-0 m-0">
-        <a class="btn text-dark d-block content-link" 
-           role="button" 
-           onclick="contentSelect(event, 'welcome-store')" 
+        <a class="btn text-dark d-block content-link"
+           role="button"
+           onclick="contentSelect(event, 'welcome-store')"
            href="#">Store</a>
       </aside>
 
       <!-- Content -->
-      <div id="content" class="col-sm bg-light rounded">  
-        
+      <div id="content" class="col-sm bg-light rounded m-2">
+
         <!-- Welcoming Introduction -->
          <article id="welcome-intro" class="rounded content">
           <h2>Welcome!</h2>
@@ -78,12 +78,12 @@
           <h2>Another Section</h2>
           <p>More content.</p>
         </article>
-        
+
         <!-- Gallery -->
         <article id="welcome-gallery" class="rounded content hide">
           <h2>Collected images</h2>
         </article>
-        
+
         <!-- Library -->
         <article id="welcome-library" class="rounded content hide">
           <h2>Free learning resources</h2>
@@ -93,26 +93,31 @@
             <dd><a href="https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf" target="_blank">- PDF: Command Cheatsheet</a></dd>
           </dl>
         </article>
-        
+
         <!-- Store -->
         <article id="welcome-store" class="rounded content hide">
           <h2>Buy things</h2>
         </article>
       </div>
-    </div> <!-- end flex-container-main -->
+
+      <!-- right side bar -->
+      <div class="col-sm-1 bg-light rounded m-2">
+
+      </div>
+    </div> <!-- end row -->
 
     <!-- Footer -->
     <footer class="text-center p-3">
       <a class="text-white p-3"
-         style="text-decoration: none" 
+         style="text-decoration: none"
          href="#">About</a>
       <a class="text-white p-3"
-         style="text-decoration: none" 
+         style="text-decoration: none"
          href="#">Contact</a>
       <a class="text-white p-3"
-         style="text-decoration: none" 
+         style="text-decoration: none"
          href="https://github.com/JaundiceJack" target="_blank">GitHub</a>
-    </footer> 
+    </footer>
   </div> <!-- End container-fluid -->
 
   <!-- Scripts -->
