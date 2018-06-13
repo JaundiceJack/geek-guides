@@ -1,28 +1,6 @@
-function contentSelect(evt, contentName){
-	// Declare all variables
-	var i, content, link;
-
-	// Get all elements with class="content" and set display to none to hide them
-	content = document.getElementsByClassName("content"); //$(".content");
-	for(i=0; i < content.length; i++){
-		content[i].style.display = "none";
-	}
-
-	// Get all elements with class="link" and remove the class "active"
-	link = document.getElementsByClassName("content-link"); //$(".content-link");
-	for(i=0; i < link.length; i++){
-		link[i].className = link[i].className.replace(" active", "");
-		link[i].style.background = "inherit"
-	}
-
-	// Show the current tab, and add an "active" class to the button that opened the tab
-	document.getElementById(contentName).style.display = "block";
-	evt.currentTarget.className += " active";
-	evt.currentTarget.style.background = "#ABC";
-};
-
 function contentToggle(contentId){
 	var content = document.getElementById(contentId);
+
 	if (content.style.display === "none"){
 		content.style.display = "block";
 	}
@@ -30,3 +8,15 @@ function contentToggle(contentId){
 		content.style.display = "none";
 	}
 }
+
+function hideContent(){
+	var i, subContents;
+	subContents = document.getElementsByClassName("subContent");
+	
+	//hide all content dropdowns
+	for(i = 0; i < subContents.length; i++){
+		subContents[i].style.display = "none";
+	}
+}
+
+$(document).ready(hideContent());

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geek Guides: Arduino</title>
+
+  <!--  Styles  -->
+  <link rel="stylesheet" href="../styles.css">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet"> 
+  <!-- Bootstrap 4 CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
+  <!-- Bootstrap 4 JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<div class="container-fluid p-0">
+  <body style="background: linear-gradient(90deg, #000, #333, #000)">  
+    
+    <!-- Site intro banner -->
+    <header class="text-center">
+      <h1><a id="headerLink" href="../index.html">Geek Guides</a></h1>
+    </header>
+
+    <!-- Top navigation menu -->
+    <nav id="top-nav" class="text-center">
+      <!-- Arduino Link -->
+      <a style="background-color: #999;" href="../arduino.html">Arduino</a>
+      <!-- Raspberry Pi Link -->
+      <a href="../raspberry.html">Raspberry Pi</a>
+      <!-- Linux Link -->
+      <a href="../linux.html">Linux</a>
+    </nav>
+
+    <div id="contentContainer" class="row no-gutters justify-content-around">
+      <!-- Side navigation menu -->
+      <aside id="side-nav" class="col-sm-auto bg-light rounded m-2">
+        <!-- Welcome Link -->
+        <a class="noShadow btn btn-block text-dark"
+           href="../arduino.html">Intro</a>
+        <hr class="p-0 m-0">
+        <!-- Project #1 Link -->
+        <a class="noShadow btn btn-block text-dark"
+           style="background-color: #ABC" 
+           href="project1.html">Project #1:<br>Blinking LED</a>
+        <hr class="p-0 m-0">
+        <!-- Project #2 Link -->
+        <a class="noShadow btn btn-block text-dark"
+           href="project2.html">Project #2:<br>Traffic Lights</a>
+        <hr class="p-0 m-0">
+        <!-- Project #3 Link -->
+        <a class="noShadow btn btn-block text-dark"
+           href="project3.html">Project #3:<br>Annoyatron</a>
+      </aside>
+
+<!-- Content -->       
+      <!-- Project #1: Blinking LED -->
+      <article id="content" class="col-sm bg-light rounded m-2 p-2">
+        <h2>Project #1: Blinking LED</h2>
+        <img src="#" height="100px" width="100px" alt="Blinking LED Image">
+        <p>In this project we'll get a light to blink on and off, and later modify it using Pulse Width Modulation (PWM) to make it fade in and out instead.</p>
+        <!-- materials section -->
+        <button class="noShadow btn btn-block text-left mb-2" onclick="contentToggle('materials')">
+          <i class="fa fa-chevron-down mr-2"></i>Materials</button>
+        <div id="materials" class="subContent">
+          <h4>Materials Required:</h4>
+          <ul>
+            <li>2x Jumper Wires</li>
+            <li>3x Connector Wires</li>
+            <li>1x 220 Ohm Resistor</li>
+            <li>1x LED</li>
+            <li>1x Breadboard</li>
+            <li>1x Arduino Uno</li>
+          </ul>
+        </div>
+        <!-- construction section -->
+        <button class="noShadow btn btn-block text-left mb-2" onclick="contentToggle('construction')">
+          <i class="fa fa-chevron-down mr-2"></i>Construction</button>
+        <div id="construction" class="subContent">
+          <h4>How to Build:</h4>
+          <ol>
+            <li>Connect one end of the first jumper cable to the #9 socket on the Arduino and the other end to the (+) row on the breadboard.</li>
+            <li>Link the (+) connection to a 220 Ohm resistor.</li>
+            <li>Link the resistor to to longer positive end of an LED.</li>
+            <li>Link the shorter negative end the LED to the (-) row.</li>
+            <li>Connect the (-) row on the breadboard to the GND socket on the Arduino.</li>
+          </ol>
+        </div>
+        <!-- code section -->
+        <button class="noShadow btn btn-block text-left mb-2" onclick="contentToggle('code')">
+          <i class="fa fa-chevron-down mr-2"></i>Code</button>
+        <div id="code" class="subContent">
+          <h4>Code to Upload:</h4>
+          <code>serial.begin(9600);</code>
+        </div>
+      </article>
+<!-- end content -->
+
+      <!-- right side bar -->
+      <div class="col-sm-1 bg-light rounded m-2">
+      </div>
+    </div> <!-- end row -->
+
+    <!-- Footer -->
+    <footer class="text-center">
+      <!-- About Myself Link -->
+      <a href="#">About</a>
+      <!-- Contact Me Link -->
+      <a href="#">Contact</a>
+      <!-- Visit My GitHub Link -->
+      <a href="https://github.com/JaundiceJack" target="_blank">GitHub</a>
+    </footer>
+
+  <!-- Scripts -->
+  <script type="text/javascript" src="../scripts.js"></script>
+
+  </body>
+</div> <!-- End container-fluid -->
+</html>

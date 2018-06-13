@@ -1,34 +1,108 @@
 :root {
   --primary-color: #666;
-  /* to use, var(--primary-color, black)*/
+  /* to use: var(--primary-color, black)*/
 }
 
 .noShadow {
   box-shadow: none !important;
 }
 
+.hide {
+  display: none;
+}
+
+
+/* ID STYLING */
+#headerLink {
+  font-family: 'Orbitron', Monospace;
+  margin: 25px 0 25px 0;
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
 #contentContainer {
   background: linear-gradient(90deg, #123, #111, #123);
 }
 
-header h1 {
-  font-family: 'Orbitron', Monospace;
-}
-
+/* SECTION STYLING */
 nav {
   background: linear-gradient(90deg, #111, #666, #111);
+  /* animate a gradient flash when loading a page */
   animation-name: navBar;
-  animation-duration: 2s;
-  padding: 0;
-  margin: 0;
+  animation-duration: 500ms;
 }
 
 nav a {
   display: inline-block;
-  overflow: visible;
   padding: 16px;
   color: white;
   text-decoration: none;
+}
+
+article button {
+  background-color: #ABC;
+}
+
+footer {
+  background: linear-gradient(90deg, #111, #666, #111);
+}
+
+footer a {
+  display: inline-block;
+  padding: 16px;
+  color: white;
+  text-decoration: none;
+}
+
+
+/* HOVER STATES */
+nav a:hover {
+  color: white;
+  text-decoration: none;
+  background-color: #999;
+  transition: 0.5s;
+  
+  animation-name: bump;
+  animation-duration: 500ms;
+}
+
+aside a:hover {
+  background-color: #BCE !important;
+  transition: 0.3s;
+
+  animation-name: bump;
+  animation-duration: 500ms;
+}
+
+footer a:hover {
+  color: white;
+  text-decoration: none;
+  background-color: #999;
+  transition: 0.5s;
+
+  animation-name: bump;
+  animation-duration: 500ms;
+}
+
+/* SIZING */
+@media screen and (max-width: 400px) {
+  #side-nav a{text-align: center;}
+  #top-nav a{display: block;}
+  footer a{display: block;}
+}
+
+/* ANIMATIONS */
+@keyframes bump {
+  0% {
+    transform: scale(1.0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.0);
+  }
 }
 
 @keyframes navBar {
@@ -65,45 +139,4 @@ nav a {
   100% {
     background: linear-gradient(90deg, #222, #777, #222);
   }
-}
-
-article{
-  padding: 20px;
-}
-
-article button {
-  background-color: #ABC;
-}
-
-footer {
-  background: linear-gradient(90deg, #111, #666, #111);
-}
-
-nav a:hover{
-  background-color: #999;
-  transition: 0.5s;
-  color: white;
-  text-decoration: none;
-}
-
-/* The javascript interferes with the hovered link changing color */
-aside a:hover{
-  background-color: #999;
-  transition: 0.3s;
-  transform: scale(1.05);
-}
-
-footer a:hover{
-  background-color: #999;
-  transition: 0.5s;
-}
-
-.hide {
-  display: none;
-}
-
-@media screen and (max-width: 400px) {
-  #side-nav a{text-align: center;}
-  #top-nav a{display: block;}
-  footer a{display: block;}
 }
