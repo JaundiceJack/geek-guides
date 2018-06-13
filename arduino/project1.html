@@ -64,9 +64,17 @@
 <!-- Content -->       
       <!-- Project #1: Blinking LED -->
       <article id="content" class="col-sm bg-light rounded m-2 p-2">
-        <h2>Project #1: Blinking LED</h2>
+        <h2 class="text-center mt-4">Project #1: Blinking LED</h2>
+        <hr>
         <img src="#" height="100px" width="100px" alt="Blinking LED Image">
         <p>In this project we'll get a light to blink on and off, and later modify it using Pulse Width Modulation (PWM) to make it fade in and out instead.</p>
+        
+        <!-- learning resources section -->
+        <button class="noShadow btn btn-block text-left mb-2" onclick="contentToggle('resources')">
+          <i class="fa fa-chevron-down mr-2"></i>Learning Resources</button>
+        <div id="resources" class="subContent">
+          <h4>Books and videos I used to learn this:</h4>
+        </div>
         <!-- materials section -->
         <button class="noShadow btn btn-block text-left mb-2" onclick="contentToggle('materials')">
           <i class="fa fa-chevron-down mr-2"></i>Materials</button>
