@@ -17,6 +17,38 @@
   display: block;
 }
 
+#animationThing {
+  background: linear-gradient(45deg, #caa, #acc);
+  border-radius: 50%;
+  margin: 100px auto;
+  width: 25px;
+  height: 25px;
+  position: relative;
+
+  animation-name: boobies;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.25, 0.75, 0.75, 0.25);
+}
+
+@keyframes boobies {
+    0% {
+      top: 0;
+    }
+    25% {
+      top: -25px;
+    }
+    50% {
+      transform: scale(5.0) rotate(360deg);
+    }
+    75% {
+      top: 25px;
+    }
+    100% {
+      top: 0;
+    }
+}
+
 #contentContainer {
   background: linear-gradient(90deg, #123, #111, #123);
 }
@@ -59,7 +91,7 @@ nav a:hover {
   text-decoration: none;
   background-color: #999;
   transition: 0.5s;
-  
+
   animation-name: bump;
   animation-duration: 500ms;
 }
