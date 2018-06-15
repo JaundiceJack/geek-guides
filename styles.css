@@ -14,14 +14,10 @@ for each page so i can edit that separately from the content */
 /* ID STYLING */
 #headerLink {
   font-family: 'Orbitron', Monospace;
-  margin: 25px 0 25px 0;
+  margin: 25px 0;
   text-decoration: none;
   color: white;
   display: block;
-}
-
-#contentContainer {
-  background: linear-gradient(90deg, #123, #111, #123);
 }
 
 /* SECTION STYLING */
@@ -38,6 +34,10 @@ nav a {
   margin: 0;
   color: white;
   text-decoration: none;
+}
+
+main {
+  background: linear-gradient(90deg, #123, #111, #123);
 }
 
 article button {

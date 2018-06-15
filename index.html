@@ -22,9 +22,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 </head>
-<body style="background: linear-gradient(90deg, #000, #333, #000)">
 
-  <div class="container-fluid p-0">
+<div class="container-fluid p-0">
+  
+  <body style="background: linear-gradient(90deg, #000, #333, #000)">  
 
     <!-- Site intro banner -->
     <header class="text-center">
@@ -32,7 +33,7 @@
     </header>
 
     <!-- Top navigation menu -->
-    <nav id="top-nav" class="text-center">
+    <nav class="text-center">
       <!-- Arduino Link -->
       <a href="arduino.html">Arduino</a>
       <!-- Raspberry Pi Link -->
@@ -41,86 +42,59 @@
       <a href="linux.html">Linux</a>
     </nav>
 
-    <div id="contentContainer" class="row no-gutters justify-content-around">
+    <main class="row no-gutters">
+
       <!-- Side navigation menu -->
-      <aside id="side-nav" class="col-sm-auto bg-light rounded m-2">
-        <a class="btn btn-block text-dark content-link"
-           role="button"
-           onclick="contentSelect(event, 'welcome-intro')"
+      <aside class="col-sm-auto bg-light rounded">
+        <!-- Intro Link -->
+        <a class="noShadow btn btn-block text-dark"
+           style="background-color: #ABC" 
            href="#">Intro</a>
         <hr class="p-0 m-0">
-        <a class="btn text-dark d-block content-link"
-           role="button"
-           onclick="contentSelect(event, 'welcome-gallery')"
+        <!-- Gallery Link -->
+        <a class="noShadow btn btn-block text-dark"
            href="#">Gallery</a>
         <hr class="p-0 m-0">
-        <a class="btn text-dark d-block content-link"
-           role="button"
-           onclick="contentSelect(event, 'welcome-library')"
+        <!-- Library Link -->
+        <a class="noShadow btn btn-block text-dark"
            href="#">Library</a>
         <hr class="p-0 m-0">
-        <a class="btn text-dark d-block content-link"
-           role="button"
-           onclick="contentSelect(event, 'welcome-store')"
+        <!-- Store Link: might remove until ready -->
+        <a class="noShadow btn btn-block text-dark"
            href="#">Store</a>
       </aside>
 
-      <!-- Content -->
-      <div id="content" class="col-sm bg-light rounded m-2">
-
-        <!-- Welcoming Introduction -->
-         <article id="welcome-intro" class="rounded content">
-          <h2>Welcome!</h2>
-          <p>I've collected step-by-step how-to's and guides for nerds.</p>
-          <p>More words.</p>
-          <p>Even more words.</p>
-          <h2>Another Section</h2>
-          <p>More content.</p>
-        </article>
-
-        <!-- Gallery -->
-        <article id="welcome-gallery" class="rounded content">
-          <h2>Collected images</h2>
-        </article>
-
-        <!-- Library -->
-        <article id="welcome-library" class="rounded content">
-          <h2>Free learning resources</h2>
-          <dl>
-            <dt>Git & GitHub Usage</dt>
-            <dd><a href="https://www.youtube.com/watch?v=SWYqp7iY_Tc" target="_blank">- Youtube: Traversy Media makes it easy</a></dd>
-            <dd><a href="https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf" target="_blank">- PDF: Command Cheatsheet</a></dd>
-          </dl>
-        </article>
-
-        <!-- Store -->
-        <article id="welcome-store" class="rounded content">
-          <h2>Buy things</h2>
-        </article>
-      </div>
+<!-- Content -->
+       <article class="col-sm bg-light rounded m-2 p-4">
+        <h2>Welcome!</h2>
+        <p>I've collected step-by-step how-to's and guides for nerds.</p>
+        <p>More words.</p>
+        <p>Even more words.</p>
+        <h2>Another Section</h2>
+        <p>More content.</p>
+      </article>
+<!-- end content -->      
 
       <!-- right side bar -->
-      <div class="col-sm-1 bg-light rounded m-2">
-
+      <div class="col-sm-1 bg-light rounded">
       </div>
-    </div> <!-- end row -->
+    </main> <!-- end row -->
 
     <!-- Footer -->
-    <footer class="text-center p-3">
-      <a class="text-white p-3"
-         style="text-decoration: none"
-         href="#">About</a>
-      <a class="text-white p-3"
-         style="text-decoration: none"
-         href="#">Contact</a>
-      <a class="text-white p-3"
-         style="text-decoration: none"
-         href="https://github.com/JaundiceJack" target="_blank">GitHub</a>
+    <footer class="text-center">
+      <!-- About Myself Link -->
+      <a href="#">About</a>
+      <!-- Contact Me Link -->
+      <a href="#">Contact</a>
+      <!-- Visit My GitHub Link -->
+      <a href="https://github.com/JaundiceJack" target="_blank">GitHub</a>
     </footer>
-  </div> <!-- End container-fluid -->
 
-  <!-- Scripts -->
-  <script type="text/javascript" src="scripts.js"></script>
+    <!-- Scripts -->
+    <script type="text/javascript" src="scripts.js"></script>
 
-</body>
+  </body>
+
+</div> <!-- End container-fluid -->
+
 </html>
