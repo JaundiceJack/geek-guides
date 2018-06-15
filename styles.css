@@ -6,10 +6,23 @@ for each page so i can edit that separately from the content */
   /* to use: var(--primary-color, black)*/
 }
 
-.noShadow {
+.aside-link {
   box-shadow: none !important;
+  text-align: left !important;
+  color: black;
+  text-decoration: none;
 }
 
+.bar-link {
+  display: inline-block;
+  padding: 16px;
+  color: white;
+  text-decoration: none;
+}
+
+.bar-gradient {
+  background: linear-gradient(90deg, #111, #666, #111);
+}
 
 /* ID STYLING */
 #headerLink {
@@ -22,18 +35,9 @@ for each page so i can edit that separately from the content */
 
 /* SECTION STYLING */
 nav {
-  background: linear-gradient(90deg, #111, #666, #111);
   /* animate a gradient flash when loading a page */
   animation-name: navBar;
   animation-duration: 500ms;
-}
-
-nav a {
-  display: inline-block;
-  padding: 16px;
-  margin: 0;
-  color: white;
-  text-decoration: none;
 }
 
 main {
@@ -43,18 +47,6 @@ main {
 article button {
   background-color: #ABC;
 }
-
-footer {
-  background: linear-gradient(90deg, #111, #666, #111);
-}
-
-footer a {
-  display: inline-block;
-  padding: 16px;
-  color: white;
-  text-decoration: none;
-}
-
 
 /* HOVER STATES */
 nav a:hover {
