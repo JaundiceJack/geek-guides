@@ -1,3 +1,5 @@
+
+
 function contentToggle(contentId){
 	var content = document.getElementById(contentId);
 
@@ -12,7 +14,7 @@ function contentToggle(contentId){
 function hideContent(){
 	var i, subContents;
 	subContents = document.getElementsByClassName("subContent");
-	
+
 	//hide all content dropdowns
 	for(i = 0; i < subContents.length; i++){
 		subContents[i].style.display = "none";
