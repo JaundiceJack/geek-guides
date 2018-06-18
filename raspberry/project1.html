@@ -1,1 +1,90 @@
-<div>Hi there!</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geek Guides: Raspberry</title>
+
+  <!--  Styles  -->
+  <link rel="stylesheet" href="../styles.css">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+  <!-- Bootstrap 4 CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
+  <!-- Bootstrap 4 JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+
+<div class="container-fluid p-0">
+
+  <body style="background: linear-gradient(90deg, #000, #333, #000)">
+
+    <!-- Site intro banner -->
+    <header class="text-center">
+      <h1><a id="headerLink" href="../index.html">Geek Guides</a></h1>
+    </header>
+
+    <!-- Top navigation menu -->
+    <nav class="bar-gradient text-center">
+      <!-- Arduino Links -->
+      <div class="dropdown">
+        <a class="bar-link" href="../arduino.html">Arduino</a>
+        <div id="arduino-dropdown-content" class="dropdown-content">
+          <a href="../arduino/project1.html"><i class="fa fa-cog"></i>Blinking LED</a>
+          <a href="../arduino/project2.html"><i class="fa fa-cog"></i>Binary Clock</a>
+          <a href="../arduino/project3.html"><i class="fa fa-cog"></i>Annoyatron</a>
+        </div>
+      </div>
+      <!-- Raspberry Pi Links -->
+      <div class="dropdown">
+        <a class="bar-link" style="background-color: #999;" href="../raspberry.html">Raspberry Pi</a>
+        <div id="raspberry-dropdown-content" class="dropdown-content">
+          <a href="#"><i class="fa fa-cog"></i>Homemade PC</a>
+        </div>
+      </div>
+      <!-- Linux Links -->
+      <div class="dropdown">
+        <a class="bar-link" href="../linux.html">Linux</a>
+        <div id="linux-dropdown-content" class="dropdown-content">
+          <a href="../linux/contrib-nonfree.html"><i class="fa fa-cog"></i>Enable contrib & non-free repos</a>
+          <a href="../linux/hotcorner.html"><i class="fa fa-cog"></i>Disable hotcorner</a>
+          <a href="../linux/installing-deb-packages.html"><i class="fa fa-cog"></i>Installing .deb packages</a>
+          <a href="../linux/windows-bar.html"><i class="fa fa-cog"></i>Add an open windows bar</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="row no-gutters">
+<!-- Content -->
+      <!-- Project #1: Build a PC -->
+      <article class="col-sm bg-light rounded m-2 p-4">
+        <h2 class="text-center">Project #1: Build a PC</h2>
+        <hr>
+      </article>
+<!-- end content -->
+    </main> <!-- end row -->
+
+    <!-- Footer -->
+    <footer class="bar-gradient text-center">
+      <!-- About Myself Link -->
+      <a class="bar-link" href="#">About</a>
+      <!-- Contact Me Link -->
+      <a class="bar-link" href="#">Contact</a>
+      <!-- Visit My GitHub Link -->
+      <a class="bar-link" href="https://github.com/JaundiceJack" target="_blank">GitHub</a>
+    </footer>
+
+  <!-- Scripts -->
+  <script type="text/javascript" src="../scripts.js"></script>
+
+  </body>
+</div> <!-- End container-fluid -->
+</html>

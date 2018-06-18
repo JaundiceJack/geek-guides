@@ -1,15 +1,11 @@
 /* TODO: learn how to include header/nav/aside/footer
 for each page so i can edit that separately from the content */
 
+/* Dropdown navigation menus */
 .dropdown {
   position: relative;
   display: inline-block;
 }
-
-#arduino-dropdown-content, #raspberry-dropdown-content, #linux-dropdown-content {
-  display: none;
-}
-
 .dropdown-content {
   background-color: #BCE;
   position: absolute;
@@ -17,20 +13,24 @@ for each page so i can edit that separately from the content */
   min-width: 200px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
 }
-
 .dropdown-content a {
   display: block;
-  color: black;
+  color: #000;
   padding: 16px;
   text-decoration: none !important;
   text-align: left;
 }
-
 .dropdown-content a:hover {
   background-color: #ABC;
 }
+.dropdown-content i {
+  margin-right: 10px;
+}
 
 /* Show the links when the appropriate dropdown is hovered over */
+#arduino-dropdown-content, #raspberry-dropdown-content, #linux-dropdown-content {
+  display: none;
+}
 .dropdown:hover #arduino-dropdown-content {
   display: block;
 }
@@ -93,8 +93,9 @@ article button {
 }
 
 /* SIZING */
+/* TODO: once converted to grid, move nav below content and expand/show dropdowns; */
 @media screen and (max-width: 400px) {
-  .bar-link{display: block;}
+  .dropdown {display: block;}
 }
 
 /* ANIMATIONS */
