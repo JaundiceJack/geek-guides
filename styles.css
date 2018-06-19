@@ -6,6 +6,24 @@ for each page so i can edit that separately from the content */
   position: relative;
   display: inline-block;
 }
+.dropdown a {
+  display: inline-block;
+  line-height: 100%;
+}
+.dropdown i {
+  margin-right: 10px;
+  display: inline-block;
+  background-color: white;
+}
+#arduinoIcon {
+  color: teal;
+}
+#piIcon {
+  color: #f39;
+}
+#linuxIcon {
+  color: #f90;
+}
 .dropdown-content {
   background-color: #BCE;
   position: absolute;
@@ -17,7 +35,7 @@ for each page so i can edit that separately from the content */
   display: block;
   color: #000;
   padding: 16px;
-  text-decoration: none !important;
+  text-decoration: none;
   text-align: left;
 }
 .dropdown-content a:hover {
@@ -65,7 +83,7 @@ a.bar-link:hover {
 }
 
 .bar-gradient {
-  background: linear-gradient(90deg, #111, #666, #111);
+  background: linear-gradient(90deg, #666, #111);
 }
 
 /* ID STYLING */
@@ -113,36 +131,36 @@ article button {
 
 @keyframes navBar {
   0% {
-    background: linear-gradient(90deg, #222, #777, #222);
+    background: linear-gradient(90deg, #555, #000);
   }
   10% {
-    background: linear-gradient(90deg, #333, #888, #333);
+    background: linear-gradient(90deg, #555, #000);
   }
   20% {
-    background: linear-gradient(90deg, #444, #999, #444);
+    background: linear-gradient(90deg, #444, #000);
   }
   30% {
-    background: linear-gradient(90deg, #555, #AAA, #555);
+    background: linear-gradient(90deg, #444, #000);
   }
   40% {
-    background: linear-gradient(90deg, #666, #AAA, #666);
+    background: linear-gradient(90deg, #333, #000);
   }
   50% {
-    background: linear-gradient(90deg, #777, #AAA, #777);
+    background: linear-gradient(90deg, #222, #000);
   }
   60% {
-    background: linear-gradient(90deg, #666, #AAA, #666);
+    background: linear-gradient(90deg, #333, #000);
   }
   70% {
-    background: linear-gradient(90deg, #555, #AAA, #555);
+    background: linear-gradient(90deg, #444, #000);
   }
   80% {
-    background: linear-gradient(90deg, #444, #999, #444);
+    background: linear-gradient(90deg, #444, #000);
   }
   90% {
-    background: linear-gradient(90deg, #333, #888, #333);
+    background: linear-gradient(90deg, #555, #000);
   }
   100% {
-    background: linear-gradient(90deg, #222, #777, #222);
+    background: linear-gradient(90deg, #555, #000);
   }
 }
