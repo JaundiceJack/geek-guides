@@ -25,21 +25,20 @@
 
 </head>
 
-<div class="container-fluid p-0">
-
-  <body style="background: linear-gradient(90deg, #000, #333, #000)">
+<body>
+  <div id="site-grid">
 
     <!-- Site intro banner -->
-    <header class="text-center">
+    <header>
       <h1><a id="headerLink" href="index.html">Geek Guides</a></h1>
     </header>
 
     <!-- Top navigation menu -->
-    <nav class="bar-gradient text-left">
+    <nav>
       <!-- Arduino Links -->
       <div class="dropdown">
         <a class="bar-link" style="background-color: #999;" href="#">
-          <i id="arduinoIcon">∞</i>Arduino</a>
+          <i id="arduinoIcon" class="fa-lg">∞</i>Arduino</a>
         <div id="arduino-dropdown-content" class="dropdown-content">
           <a href="arduino/project1.html"><i class="fa fa-cog"></i>Blinking LED</a>
           <a href="arduino/project2.html"><i class="fa fa-cog"></i>Binary Clock</a>
@@ -49,7 +48,7 @@
       <!-- Raspberry Pi Links -->
       <div class="dropdown">
         <a class="bar-link" href="raspberry.html">
-          <i id="piIcon" class="icon-raspberrypi"></i>Raspberry Pi</a>
+          <i id="piIcon" class="icon-raspberrypi fa-lg"></i>Raspberry Pi</a>
         <div id="raspberry-dropdown-content" class="dropdown-content">
           <a href="raspberry/project1.html"><i class="fa fa-cog"></i>Homemade PC</a>
         </div>
@@ -57,7 +56,7 @@
       <!-- Linux Links -->
       <div class="dropdown">
         <a class="bar-link" href="linux.html">
-          <i id="linuxIcon" class="fa fa-linux"></i>Linux</a>
+          <i id="linuxIcon" class="fa fa-linux fa-lg"></i>Linux</a>
         <div id="linux-dropdown-content" class="dropdown-content">
           <a href="linux/contrib-nonfree.html"><i class="fa fa-cog"></i>Enable contrib & non-free repos</a>
           <a href="linux/hotcorner.html"><i class="fa fa-cog"></i>Disable hotcorner</a>
@@ -67,10 +66,10 @@
       </div>
     </nav>
 
-    <main class="row no-gutters">
+    <main>
 <!-- Content -->
-      <article class="col-sm bg-light rounded m-2 p-4">
-        <h2 class="text-center">Arduino Projects</h2>
+      <article class="bg-light rounded">
+        <h2>Arduino Projects</h2>
         <hr>
         <p>To the left you can find my collected arduino projects. For each project I include resources to teach yourself with, materials required, step-by-step construction, and commented code to run the project.</p>
       </article>
@@ -78,7 +77,7 @@
     </main> <!-- end main row -->
 
     <!-- Footer -->
-    <footer class="bar-gradient text-left">
+    <footer>
       <!-- About Myself Link -->
       <a class="bar-link" href="#">About</a>
       <!-- Contact Me Link -->
@@ -86,12 +85,10 @@
       <!-- Visit My GitHub Link -->
       <a class="bar-link" href="https://github.com/JaundiceJack" target="_blank">GitHub</a>
     </footer>
-
-    <!-- Scripts -->
-    <script type="text/javascript" src="scripts.js"></script>
-
-  </body>
-
-</div> <!-- End container-fluid -->
+    
+  </div>
+  <!-- Scripts -->
+  <script type="text/javascript" src="scripts.js"></script>
+</body>
 
 </html>

@@ -5,15 +5,14 @@ for each page so i can edit that separately from the content */
 .dropdown {
   position: relative;
   display: inline-block;
+  height: 100%;
 }
 .dropdown a {
   display: inline-block;
-  line-height: 100%;
+  height: 100%;
 }
 .dropdown i {
   margin-right: 10px;
-  display: inline-block;
-  background-color: white;
 }
 #arduinoIcon {
   color: teal;
@@ -44,7 +43,6 @@ for each page so i can edit that separately from the content */
 .dropdown-content i {
   margin-right: 10px;
 }
-
 /* Show the links when the appropriate dropdown is hovered over */
 #arduino-dropdown-content, #raspberry-dropdown-content, #linux-dropdown-content {
   display: none;
@@ -57,6 +55,54 @@ for each page so i can edit that separately from the content */
 }
 .dropdown:hover #linux-dropdown-content {
   display: block;
+}
+
+/* layout */
+#site-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 55px 1fr 55px;
+  grid-template-areas: "header"
+                       "nav"
+                       "content"
+                       "footer";
+}
+
+header {
+  background: linear-gradient(90deg, #ABC, #321);
+  grid-area: "header";
+  text-align: center;
+}
+
+header a {
+  font-family: 'Orbitron', Monospace;
+  text-decoration: none;
+  color: black;
+  display: block;
+  margin: 25px 0;
+}
+
+nav {
+  grid-area: "nav";
+  background: linear-gradient(90deg, #BCD, #210);
+  height: 100%;
+  /* animate a gradient flash when loading a page */
+  animation-name: navBar;
+  animation-duration: 500ms;
+}
+
+main {
+  grid-area: "content";
+  align-self: center;
+}
+
+article button {
+  background-color: #ABC;
+}
+
+footer {
+  grid-area: "footer";
+  background: linear-gradient(90deg, #BCD, #210);
 }
 
 /* Set root variables */
@@ -82,33 +128,7 @@ a.bar-link:hover {
   animation-duration: 500ms;
 }
 
-.bar-gradient {
-  background: linear-gradient(90deg, #666, #111);
-}
 
-/* ID STYLING */
-#headerLink {
-  font-family: 'Orbitron', Monospace;
-  margin: 25px 0;
-  text-decoration: none;
-  color: white;
-  display: block;
-}
-
-/* SECTION STYLING */
-nav {
-  /* animate a gradient flash when loading a page */
-  animation-name: navBar;
-  animation-duration: 500ms;
-}
-
-main {
-  background: linear-gradient(90deg, #123, #111, #123);
-}
-
-article button {
-  background-color: #ABC;
-}
 
 /* SIZING */
 /* TODO: once converted to grid, move nav below content and expand/show dropdowns; */
