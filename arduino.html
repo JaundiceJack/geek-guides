@@ -35,43 +35,71 @@
 
     <!-- Top navigation menu -->
     <nav>
-      <!-- Arduino Links -->
+      <ul class="dropdown">
+        <!-- Arduino Links -->
+        <li>
+          <a class="bar-link" style="background-color: #555;" href="#">
+            <i id="arduinoIcon" class="fa-lg">∞</i>Arduino</a>
+          <div id="arduino-dropdown-content" class="dropdown-content">
+            <a href="arduino/project1.html"><i class="fa fa-cog"></i>Blinking LED</a>
+            <a href="arduino/project2.html"><i class="fa fa-cog"></i>Binary Clock</a>
+            <a href="arduino/project3.html"><i class="fa fa-cog"></i>Annoyatron</a>
+          </div>
+        </li>
+        <!-- Raspberry Pi Links -->
+        <li>
+          <a class="bar-link" href="raspberry.html">
+            <i id="piIcon" class="icon-raspberrypi fa-lg"></i>Raspberry Pi</a>
+          <div id="raspberry-dropdown-content" class="dropdown-content">
+            <a href="raspberry/project1.html"><i class="fa fa-cog"></i>Homemade PC</a>
+          </div>
+        </li>
+        <!-- Linux Links -->
+        <li>
+          <a class="bar-link" href="linux.html">
+            <i id="linuxIcon" class="fa fa-linux fa-lg"></i>Linux</a>
+          <div id="linux-dropdown-content" class="dropdown-content">
+            <a href="linux/contrib-nonfree.html"><i class="fa fa-cog"></i>Enable contrib & non-free repos</a>
+            <a href="linux/hotcorner.html"><i class="fa fa-cog"></i>Disable hotcorner</a>
+            <a href="linux/installing-deb-packages.html"><i class="fa fa-cog"></i>Installing .deb packages</a>
+            <a href="linux/windows-bar.html"><i class="fa fa-cog"></i>Add an open windows bar</a>
+          </div>
+        </li>
+      </ul>
+      
+      
       <div class="dropdown">
-        <a class="bar-link" style="background-color: #999;" href="#">
-          <i id="arduinoIcon" class="fa-lg">∞</i>Arduino</a>
-        <div id="arduino-dropdown-content" class="dropdown-content">
-          <a href="arduino/project1.html"><i class="fa fa-cog"></i>Blinking LED</a>
-          <a href="arduino/project2.html"><i class="fa fa-cog"></i>Binary Clock</a>
-          <a href="arduino/project3.html"><i class="fa fa-cog"></i>Annoyatron</a>
-        </div>
-      </div>
-      <!-- Raspberry Pi Links -->
-      <div class="dropdown">
-        <a class="bar-link" href="raspberry.html">
-          <i id="piIcon" class="icon-raspberrypi fa-lg"></i>Raspberry Pi</a>
-        <div id="raspberry-dropdown-content" class="dropdown-content">
-          <a href="raspberry/project1.html"><i class="fa fa-cog"></i>Homemade PC</a>
-        </div>
-      </div>
-      <!-- Linux Links -->
-      <div class="dropdown">
-        <a class="bar-link" href="linux.html">
-          <i id="linuxIcon" class="fa fa-linux fa-lg"></i>Linux</a>
-        <div id="linux-dropdown-content" class="dropdown-content">
-          <a href="linux/contrib-nonfree.html"><i class="fa fa-cog"></i>Enable contrib & non-free repos</a>
-          <a href="linux/hotcorner.html"><i class="fa fa-cog"></i>Disable hotcorner</a>
-          <a href="linux/installing-deb-packages.html"><i class="fa fa-cog"></i>Installing .deb packages</a>
-          <a href="linux/windows-bar.html"><i class="fa fa-cog"></i>Add an open windows bar</a>
-        </div>
-      </div>
+        
+      </ul>
     </nav>
 
     <main>
 <!-- Content -->
-      <article class="bg-light rounded">
+      <article>
         <h2>Arduino Projects</h2>
         <hr>
-        <p>To the left you can find my collected arduino projects. For each project I include resources to teach yourself with, materials required, step-by-step construction, and commented code to run the project.</p>
+        <h3>Beginner:</h3>
+        <div class="project-grid">
+          <div>
+            <img src="#" width=250px height=250px>
+            <p>Make an LED blink</p>
+          </div>
+          <div>
+            <img src="#" width=250px height=250px>
+            <p>Build a binary clock</p>
+          </div>
+          <div>
+            <img src="#" width=250px height=250px>
+            <p>Build a secret buzzer</p>
+          </div>
+        </div>
+        <hr>
+        <h3>Intermediate:</h3>
+        <p>Nothing here yet. Check back in soon.</p>
+        <hr>
+        <h3>Advanced:</h3>
+        <p>Nothing here yet. Check back in soon.</p>
+        <hr>
       </article>
 <!-- end content -->
     </main> <!-- end main row -->

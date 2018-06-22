@@ -1,27 +1,43 @@
 /* TODO: learn how to include header/nav/aside/footer
 for each page so i can edit that separately from the content */
 
+.bar-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+a.bar-link {
+  text-decoration: none;
+  color: white;
+}
+
+a.bar-link:hover {
+  background-color: #666;
+  transition: 0.5s;
+  text-decoration: none;
+  color: white;
+
+  animation-name: bump;
+  animation-duration: 500ms;
+}
+
 /* Dropdown navigation menus */
 .dropdown {
+  list-style-type: none;
   position: relative;
-  display: inline-block;
   height: 100%;
+}
+.dropdown li {
+  display: inline-block;
 }
 .dropdown a {
   display: inline-block;
-  height: 100%;
 }
 .dropdown i {
   margin-right: 10px;
 }
-#arduinoIcon {
-  color: teal;
-}
-#piIcon {
-  color: #f39;
-}
-#linuxIcon {
-  color: #f90;
+#arduinoIcon, #piIcon, #linuxIcon {
+  color: #ABC;
 }
 .dropdown-content {
   background-color: #BCE;
@@ -30,14 +46,14 @@ for each page so i can edit that separately from the content */
   min-width: 200px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
 }
-.dropdown-content a {
+.dropdown-content > a {
   display: block;
   color: #000;
   padding: 16px;
   text-decoration: none;
   text-align: left;
 }
-.dropdown-content a:hover {
+.dropdown-content > a:hover {
   background-color: #ABC;
 }
 .dropdown-content i {
@@ -56,36 +72,41 @@ for each page so i can edit that separately from the content */
 .dropdown:hover #linux-dropdown-content {
   display: block;
 }
+/* End dropdown navigation menus
+
 
 /* layout */
 #site-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 100px 55px 1fr 55px;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto auto;
   grid-template-areas: "header"
                        "nav"
                        "content"
                        "footer";
 }
 
-header {
-  background: linear-gradient(90deg, #ABC, #321);
-  grid-area: "header";
-  text-align: center;
+.project-grid {
+  display: grid;
+  grid-gap: 5% 5%;
+  grid-template-rows: auto auto;
+  grid-template-columns: repeat(3, auto);
 }
 
-header a {
-  font-family: 'Orbitron', Monospace;
-  text-decoration: none;
-  color: black;
-  display: block;
-  margin: 25px 0;
+body {
+  background: linear-gradient(90deg, #222, #000);
+}
+
+header {
+  background: linear-gradient(90deg, #222, #000);
+  grid-area: "header";
+  text-align: left;
+  padding: 25px 25px 50px 25px;
 }
 
 nav {
   grid-area: "nav";
-  background: linear-gradient(90deg, #BCD, #210);
-  height: 100%;
+  background: linear-gradient(90deg, #444, #000);
   /* animate a gradient flash when loading a page */
   animation-name: navBar;
   animation-duration: 500ms;
@@ -93,7 +114,14 @@ nav {
 
 main {
   grid-area: "content";
-  align-self: center;
+  padding: 10px;
+  background-color: black;
+}
+
+article {
+  background-color: #DDD;
+  padding: 25px;
+  border-radius: 4px;
 }
 
 article button {
@@ -102,7 +130,7 @@ article button {
 
 footer {
   grid-area: "footer";
-  background: linear-gradient(90deg, #BCD, #210);
+  background: linear-gradient(90deg, #444, #000);
 }
 
 /* Set root variables */
@@ -111,29 +139,29 @@ footer {
   /* to use: var(--primary-color, black)*/
 }
 
-.bar-link {
-  display: inline-block;
-  padding: 16px;
-  color: white;
-  text-decoration: none;
+#headerLink {
+  font-family: 'Orbitron', Monospace;
+  text-decoration: none !important;
+  color: #DDD;
+  display: block;
 }
 
-a.bar-link:hover {
-  color: white;
-  text-decoration: none;
-  background-color: #999;
-  transition: 0.5s;
 
-  animation-name: bump;
-  animation-duration: 500ms;
-}
 
 
 
 /* SIZING */
 /* TODO: once converted to grid, move nav below content and expand/show dropdowns; */
 @media screen and (max-width: 400px) {
-  .dropdown {display: block;}
+  #site-grid {
+    grid-template-areas: "header"
+                       "content"
+                       "nav"
+                       "footer";}
+  .dropdown {
+    display: block;}
+  #arduino-dropdown-content, #raspberry-dropdown-content, #linux-dropdown-content {
+    display: block;}
 }
 
 /* ANIMATIONS */
@@ -151,36 +179,36 @@ a.bar-link:hover {
 
 @keyframes navBar {
   0% {
-    background: linear-gradient(90deg, #555, #000);
+    background: linear-gradient(90deg, #444, #000);
   }
   10% {
-    background: linear-gradient(90deg, #555, #000);
+    background: linear-gradient(90deg, #333, #000);
   }
   20% {
-    background: linear-gradient(90deg, #444, #000);
-  }
-  30% {
-    background: linear-gradient(90deg, #444, #000);
-  }
-  40% {
-    background: linear-gradient(90deg, #333, #000);
-  }
-  50% {
     background: linear-gradient(90deg, #222, #000);
   }
+  30% {
+    background: linear-gradient(90deg, #111, #000);
+  }
+  40% {
+    background: linear-gradient(90deg, #000, #000);
+  }
+  50% {
+    background: linear-gradient(90deg, #000, #000);
+  }
   60% {
-    background: linear-gradient(90deg, #333, #000);
+    background: linear-gradient(90deg, #000, #000);
   }
   70% {
-    background: linear-gradient(90deg, #444, #000);
+    background: linear-gradient(90deg, #111, #000);
   }
   80% {
-    background: linear-gradient(90deg, #444, #000);
+    background: linear-gradient(90deg, #222, #000);
   }
   90% {
-    background: linear-gradient(90deg, #555, #000);
+    background: linear-gradient(90deg, #333, #000);
   }
   100% {
-    background: linear-gradient(90deg, #555, #000);
+    background: linear-gradient(90deg, #444, #000);
   }
 }
