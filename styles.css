@@ -90,7 +90,7 @@ header {
   grid-row: 1 / 2;
   background: linear-gradient(90deg, #222, #000);
   text-align: left;
-  padding: 25px 25px 50px 25px;
+  padding: 50px 25px 25px 25px;
 }
 
 nav {
