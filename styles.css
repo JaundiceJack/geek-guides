@@ -1,119 +1,114 @@
 /* TODO: learn how to include header/nav/aside/footer
 for each page so i can edit that separately from the content */
 
-.bar-link {
+/* Nav & Footer list CSS */
+.barList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.barListItem {
   display: inline-block;
-  text-decoration: none;
+  postion: relative;
 }
 
-a.bar-link {
+.barListLink {
+  display: block;
   text-decoration: none;
   color: white;
+  padding: 1em;
 }
 
-a.bar-link:hover {
+.barListLink:hover {
+  text-decoration: none;
+  color: white;
   background-color: #666;
-  transition: 0.5s;
-  text-decoration: none;
-  color: white;
-
+  transition: 500ms;
   animation-name: bump;
   animation-duration: 500ms;
 }
 
-/* Dropdown navigation menus */
-.dropdown {
+/* Dropdown CSS */
+.dropDownList {
   list-style-type: none;
-  position: relative;
-  height: 100%;
-}
-.dropdown li {
-  display: inline-block;
-}
-.dropdown a {
-  display: inline-block;
-}
-.dropdown i {
-  margin-right: 10px;
-}
-#arduinoIcon, #piIcon, #linuxIcon {
-  color: #ABC;
-}
-.dropdown-content {
-  background-color: #BCE;
+  padding: 0;
+  background-color: #BCD;
   position: absolute;
   z-index: 1;
   min-width: 200px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
 }
-.dropdown-content > a {
+
+.dropDownListLink {
   display: block;
-  color: #000;
-  padding: 16px;
+  color: black;
   text-decoration: none;
-  text-align: left;
+  color: black;
+  padding: 1em;
 }
-.dropdown-content > a:hover {
+
+.dropDownListLink:hover {
+  text-decoration: none;
+  color: black;
   background-color: #ABC;
 }
-.dropdown-content i {
-  margin-right: 10px;
-}
-/* Show the links when the appropriate dropdown is hovered over */
-#arduino-dropdown-content, #raspberry-dropdown-content, #linux-dropdown-content {
+
+#arduinoList, #raspberryList, #linuxList {
   display: none;
 }
-.dropdown:hover #arduino-dropdown-content {
-  display: block;
-}
-.dropdown:hover #raspberry-dropdown-content {
-  display: block;
-}
-.dropdown:hover #linux-dropdown-content {
-  display: block;
-}
-/* End dropdown navigation menus
 
+.barListItem:hover #arduinoList {
+  display: block;
+}
+.barListItem:hover #raspberryList {
+  display: block;
+}
+.barListItem:hover #linuxList {
+  display: block;
+}
 
 /* layout */
-#site-grid {
+.site-grid {
   display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto auto auto auto;
-  grid-template-areas: "header"
-                       "nav"
-                       "content"
-                       "footer";
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(4 ,auto);
 }
 
 .project-grid {
   display: grid;
   grid-gap: 5% 5%;
-  grid-template-rows: auto auto;
-  grid-template-columns: repeat(3, auto);
 }
 
+/* Tag Level CSS */
 body {
   background: linear-gradient(90deg, #222, #000);
 }
 
 header {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
   background: linear-gradient(90deg, #222, #000);
-  grid-area: "header";
   text-align: left;
   padding: 25px 25px 50px 25px;
 }
 
 nav {
-  grid-area: "nav";
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
   background: linear-gradient(90deg, #444, #000);
   /* animate a gradient flash when loading a page */
   animation-name: navBar;
   animation-duration: 500ms;
 }
 
+i {
+  margin-right: 10px;
+}
+
 main {
-  grid-area: "content";
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
   padding: 10px;
   background-color: black;
 }
@@ -129,7 +124,8 @@ article button {
 }
 
 footer {
-  grid-area: "footer";
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
   background: linear-gradient(90deg, #444, #000);
 }
 
@@ -152,16 +148,32 @@ footer {
 
 /* SIZING */
 /* TODO: once converted to grid, move nav below content and expand/show dropdowns; */
-@media screen and (max-width: 400px) {
-  #site-grid {
-    grid-template-areas: "header"
-                       "content"
-                       "nav"
-                       "footer";}
-  .dropdown {
-    display: block;}
-  #arduino-dropdown-content, #raspberry-dropdown-content, #linux-dropdown-content {
-    display: block;}
+@media screen and (max-width: 700px) {
+  header {
+    text-align: center;
+  }
+
+  nav {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+  main {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  .barListItem {
+    display: block;
+    text-align: center;
+  }
+
+  .dropDownList {
+    position: relative;
+  }
+
+  #arduinoList, #raspberryList, #linuxList {
+    display: block;
+  }
 }
 
 /* ANIMATIONS */
