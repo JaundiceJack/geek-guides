@@ -1,226 +1,95 @@
 /* TODO: learn how to include header/nav/aside/footer
 for each page so i can edit that separately from the content */
 
-/* Nav & Footer list CSS */
-.barList {
-  list-style-type: none;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-.barListItem {
-  display: inline-block;
-  postion: relative;
-}
-
-.barListLink {
-  display: block;
-  text-decoration: none;
-  color: white;
-  padding: 1em;
-}
-
-.barListLink:hover {
-  text-decoration: none;
-  color: white;
-  background-color: #666;
-  transition: 500ms;
-  animation-name: bump;
-  animation-duration: 500ms;
-}
-
-/* Dropdown CSS */
-.dropDownList {
-  list-style-type: none;
-  padding: 0;
-  background-color: #BCD;
-  position: absolute;
-  z-index: 1;
-  min-width: 200px;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
-}
-
-.dropDownListLink {
-  display: block;
-  color: black;
-  text-decoration: none;
-  color: black;
-  padding: 1em;
-}
-
-.dropDownListLink:hover {
-  text-decoration: none;
-  color: black;
-  background-color: #ABC;
-}
-
-#arduinoList, #raspberryList, #linuxList {
-  display: none;
-}
-
-.barListItem:hover #arduinoList {
-  display: block;
-}
-.barListItem:hover #raspberryList {
-  display: block;
-}
-.barListItem:hover #linuxList {
-  display: block;
-}
-
-/* layout */
+/* Layout CSS */
+/* General page Layout */
 .site-grid {
   display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: repeat(4 ,auto);
+  grid-template-columns: 1fr;
+  grid-template-rows: 200px 100px auto 100px;
+  grid-template-areas: "header"
+                       "nav"
+                       "content"
+                       "footer";
+}
+.site-grid-item.header {
+  grid-area: header;
+}
+.site-grid-item.nav {
+  grid-area: nav;
+}
+.site-grid-item.content {
+  grid-area: content;
+}
+.site-grid-item.footer {
+  grid-area: footer;
+}
+/* Content sections Layout */
+.content-flex {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.content-flex-item {
+
+}
+/* Building Layout */
+.build-flex {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.build-flex-item {
+  
+}
+/* Steps of the build Layout */
+.step-flex {
+  display: flex;
+  flex-flow: row wrap;
+}
+.step-flex-item {
+  flex: 1 1 200px;
+}
+.code-flex {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.code-flex-item {
+  flex: 1 1 250px;
 }
 
-.project-grid {
-  display: grid;
-  grid-gap: 5% 5%;
+/* Styling CSS */
+/* Header Styling */
+.header {
+  background-color: red;
+}
+/* Navigation Styling */
+.nav {
+  width: 100%;
+  background-color: orange
+}
+.nav-list {
+  list-style-type: none;
+}
+.nav-list > li {
+  display: inline-block;
+}
+.nav-link {
+  text-decoration: none;
+}
+/* Content Styling */
+.content {
+  background-color: blue;
+}
+/*Footer Styling */
+.footer {
+  background-color: green;
 }
 
-/* Tag Level CSS */
-body {
-  background: linear-gradient(90deg, #222, #000);
-}
-
-header {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  background: linear-gradient(90deg, #222, #000);
-  text-align: left;
-  padding: 50px 25px 25px 25px;
-}
-
-nav {
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-  background: linear-gradient(90deg, #444, #000);
-  /* animate a gradient flash when loading a page */
-  animation-name: navBar;
-  animation-duration: 500ms;
-}
-
-i {
-  margin-right: 10px;
-}
-
-main {
-  grid-column: 1 / 2;
-  grid-row: 3 / 4;
-  padding: 10px;
-  background-color: black;
-}
-
-article {
-  background-color: #DDD;
-  padding: 25px;
-  border-radius: 4px;
-}
-
-article button {
-  background-color: #ABC;
-}
-
-footer {
-  grid-column: 1 / 2;
-  grid-row: 4 / 5;
-  background: linear-gradient(90deg, #444, #000);
-}
-
-/* Set root variables */
-:root {
-  --primary-color: #666;
-  /* to use: var(--primary-color, black)*/
-}
-
-#headerLink {
-  font-family: 'Orbitron', Monospace;
-  text-decoration: none !important;
-  color: #DDD;
-  display: block;
-}
-
-
-
-
-
-/* SIZING */
-/* TODO: once converted to grid, move nav below content and expand/show dropdowns; */
-@media screen and (max-width: 700px) {
-  header {
-    text-align: center;
-  }
-
-  nav {
-    grid-column: 1 / 2;
-    grid-row: 3 / 4;
-  }
-  main {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-  }
-
-  .barListItem {
-    display: block;
-    text-align: center;
-  }
-
-  .dropDownList {
-    position: relative;
-  }
-
-  #arduinoList, #raspberryList, #linuxList {
-    display: block;
-  }
-}
 
 /* ANIMATIONS */
-@keyframes bump {
-  0% {
-    transform: scale(1.0);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1.0);
-  }
-}
-
-@keyframes navBar {
-  0% {
-    background: linear-gradient(90deg, #444, #000);
-  }
-  10% {
-    background: linear-gradient(90deg, #333, #000);
-  }
-  20% {
-    background: linear-gradient(90deg, #222, #000);
-  }
-  30% {
-    background: linear-gradient(90deg, #111, #000);
-  }
-  40% {
-    background: linear-gradient(90deg, #000, #000);
-  }
-  50% {
-    background: linear-gradient(90deg, #000, #000);
-  }
-  60% {
-    background: linear-gradient(90deg, #000, #000);
-  }
-  70% {
-    background: linear-gradient(90deg, #111, #000);
-  }
-  80% {
-    background: linear-gradient(90deg, #222, #000);
-  }
-  90% {
-    background: linear-gradient(90deg, #333, #000);
-  }
-  100% {
-    background: linear-gradient(90deg, #444, #000);
-  }
-}
+@keyframes bump {50% {transform: scale(1.05);}}
