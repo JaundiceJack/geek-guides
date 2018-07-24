@@ -1,0 +1,174 @@
+body {
+	width: 100%;
+	height: 100%;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Layout Classes */
+.page-grid {}
+.page-grid-item {}
+.tnav-flex {}
+.tnav-flex-item {}
+.foot-flex {}
+.foot-flex-item {}
+
+/* Style Classes */
+.tnav {}
+.tnav-head {}
+.tnav-list {}
+.tnav-list-item {}
+.tnav-link {}
+.tnav-link-text {}
+.tnav-link-icon {}
+.snav {}
+.snav-link {}
+.cont {}
+.foot {}
+.foot-list {}
+.foot-list-item {}
+.foot-link {}
+
+/* Desktop Layout */
+.page-grid {
+		display: grid;
+		grid-template-columns: 200px 1fr;
+		grid-template-rows: auto 1fr auto;
+		grid-template-areas: "tnav tnav"
+							 "snav cont"
+							 "foot foot";
+	}
+.page-grid-item.tnav {grid-area: tnav;}
+.page-grid-item.snav {grid-area: snav; margin-top: 41px;}
+.page-grid-item.cont {grid-area: cont; margin-top: 41px;}
+.page-grid-item.foot {grid-area: foot;}
+.tnav-flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+}
+.foot-flex {
+	display: flex;
+	justify-content: center;
+} 
+/* End of Layout CSS */
+
+/* Desktop Styling */
+/* Top Navigation Bar */
+.tnav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: linear-gradient(0deg, #444, #666);
+}
+.tnav-head {
+	font-family: Orbitron, Monospace;
+	color: hsl(145, 100%, 45%);
+	padding: 5px;
+	display: inline-block;
+}
+.tnav-list {
+	height: 40px;
+	list-style-type: none;
+	margin-right: 10px;
+}
+.tnav-list-item {
+	height: 100%;
+	display: inline-block;
+}
+.tnav-link {
+	text-align: center;
+	height: 100%;
+	display: block;
+	text-decoration: none;
+	box-shadow: 0 0 2px 1px inset #789;
+}
+.tnav-link:hover, .foot-link:hover {
+	background: linear-gradient(0deg, #555, #777);
+}
+.tnav-link-icon {
+	height: 100%;
+	min-width: 30px;
+	padding: 10px 5px;
+	display: inline;
+	background-color: #666;
+	box-shadow: 0 0 2px 1px inset #ABC;
+}
+.tnav-link-text {
+	display: inline;
+	padding: 10px 10px 10px 0;
+	font-family: Orbitron, Monospace;
+	color: hsl(145, 100%, 45%);
+}
+#ardLink .tnav-link-icon {color: hsl(200, 100%, 50%);}
+#piLink .tnav-link-icon {color: hsl(330, 100%, 50%);}
+#nixLink .tnav-link-icon {color: hsl(45, 100%, 50%);}
+/* Side Navigation Bar */
+.snav {
+	background-color: blue;
+}
+/* Content */
+.cont {
+	background-color: pink;
+}
+/* Footer */
+.foot {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: linear-gradient(0deg, #444, #666);
+}
+.foot-list {
+	list-style-type: none;
+}
+.foot-list-item {
+	height: 100%;
+	display: inline-block;
+}
+.foot-link {
+	height: 100%;
+	display: block;
+	text-decoration: none;
+	padding: 5px;
+	color: hsl(45, 45%, 45%);
+}
+
+/* Tablet Layout & Styling */
+@media screen and (max-width: 760px) {
+	.page-grid {
+		display: grid;
+		grid-template-columns: 100px 1fr;
+		grid-template-rows: repeat(3, auto);
+		grid-template-areas: "tnav tnav"
+							 "snav cont"
+							 "foot foot";
+	}
+}
+/* Phone Layout & Styling */
+@media screen and (max-width: 480px) {
+	.page-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: repeat(3, auto);
+		grid-template-areas: "snav snav"
+							 "cont cont"
+							 "tnav foot";
+	}
+	.tnav {
+		position: static;	
+	}
+	.tnav-head {
+		display: none;
+	}
+	.tnav-link-text {
+		display: none;
+	}
+	.foot {
+		position: static;
+	}
+}
