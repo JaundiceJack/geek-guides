@@ -1,6 +1,15 @@
+:root {
+	--tnav-dt-w: 220px;
+	--tnav-dt-h: 210px;
+	--snav-dt-w: 220px;
+	--snav-dt-h: 100%;
+	--snav-link-h: 40px;
+}
+
+html {height: 100%;}
 body {
 	width: 100%;
-	height: 100%;
+	min-height: 100%;
 	background-color: black;
 }
 
@@ -17,6 +26,7 @@ body {
 .tnav-flex-item {}
 .link-flex {}
 .link-flex-item {}
+.snav-flex {}
 .foot-flex {}
 .foot-flex-item {}
 
@@ -40,27 +50,32 @@ body {
 
 /* Desktop Layout */
 .page-grid {
-		display: grid;
-		grid-template-columns: 200px 1fr;
-		grid-template-rows: auto 1fr auto;
-		grid-template-areas: "tnav tnav"
-							 "snav cont"
-							 "foot foot";
-	}
+	height: 100vh;
+	width: 100%;
+	display: grid;
+	grid-template-columns: var(--tnav-dt-w) 1fr;
+	grid-template-rows: var(--tnav-dt-h) 1fr 40px;
+	grid-template-areas: "tnav cont"
+						 "snav cont"
+						 "foot foot";
+	grid-gap: 10px;
+}
 .page-grid-item.tnav {grid-area:  tnav;}
-.page-grid-item.snav {grid-area:  snav;
-	 									  margin-top: 41px;}
+.page-grid-item.snav {grid-area:  snav;}
 .page-grid-item.cont {grid-area:  cont;}
 .page-grid-item.foot {grid-area:  foot;}
 .tnav-flex {
 	display: flex;
-	flex-flow: row nowrap;
-	justify-content: space-between;
-	align-items: center;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
 }
 .link-flex {
+	width: 90%;
+	margin: 10px;
 	display: flex;
-	flex-flow: row nowrap;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
 	align-items: stretch;
 }
 .foot-flex {
@@ -76,47 +91,59 @@ body {
 	position: fixed;
 	top: 0;
 	left: 0;
+	width: var(--tnav-dt-w);
+	height: var(--tnav-dt-h);
+	background-color: black;
+}
+.tnav::before {
+	z-index: -1;
+	content: "";
 	width: 100%;
-	height: auto;
-	background: linear-gradient(0deg, #444, #666);
+	height: 100%;
+	position: absolute;
+	background-position: left top;
+	background-image: url("https://www.publicdomainpictures.net/pictures/200000/velka/circuit-board-1477415362NkY.jpg");
+	background-size: cover;
+	filter: blur(4px);
 }
 .tnav-head {
 	font-family: Orbitron, Monospace;
 	color: hsl(135, 100%, 45%);
 	padding: 5px;
+	background: radial-gradient(#EEE, #CCC);
+	border-radius: 4px;
+	box-shadow: 0 0 4px 2px inset #ABC;
+	margin: 10px;
 }
 .tnav > ul {
-	height: 40px;
 	list-style-type: none;
 }
 .tnav li {
-	display: inline-block;
+	display: block;
+	margin: 3px 0;
 }
 .tnav-link {
 	z-index: 0;
 	display: block;
 	text-decoration: none;
-	box-shadow: 0 0 4px 2px inset black;
+	box-shadow: 0 0 4px 2px inset #ABC;
 	display: flex;
-	align-items: flex-start;
-	border-bottom-left-radius: 20px;
-	border-top-left-radius: 20px;
-	border-bottom-right-radius: 20px;
-	border-top-right-radius: 20px;
+	border-radius: 20px;
+	background: linear-gradient(0deg, #555, #777, #555);
 }
 .tnav-link:hover, .foot-link:hover {
 	background: linear-gradient(0deg, #555, #777);
 }
 .tnav-link-icon {
 	z-index: 1;
-	background: linear-gradient(0deg, #444, #666);
+	background: radial-gradient(#9AB, #456);
 	min-width: 40px;
 	height: 40px;
 	text-align: center;
 	padding-top: 10px;
 	display: inline-block
 	background-color: #666;
-	box-shadow: 0 0 4px 2px inset hsl(45, 100%, 75%);
+	box-shadow: 0 0 4px 2px inset #123;
 	border-radius: 50%;
 }
 .tnav-link-text {
@@ -134,27 +161,82 @@ body {
 	left: 0;
 	color: hsl(125, 100%, 95%);
 }
-#ardLink .tnav-link-icon {color: hsl(200, 100%, 70%);}
-#piLink .tnav-link-icon {color: hsl(320, 100%, 70%);}
-#nixLink .tnav-link-icon {color: hsl(45, 100%, 50%);}
-.spacer {
-	width: 15px;
-	height: 100%;
-	box-shadow: 0 0 2px 1px inset #ABC;
-	display: inline-block;
-}
+#ardLink .tnav-link-icon {color: hsl(200, 100%, 50%);}
+#piLink .tnav-link-icon {color: hsl(320, 100%, 40%);}
+#nixLink .tnav-link-icon {color: hsl(35, 75%, 45%);}
+#ardLink .tnav-link-text {color: hsl(200, 100%, 70%);}
+#piLink .tnav-link-text {color: hsl(320, 100%, 60%);}
+#nixLink .tnav-link-text {color: hsl(35, 75%, 65%);}
 /* Side Navigation Bar */
 .snav {
-	background-color: blue;
+	width: var(--snav-dt-w);
+	height: var(--snav-dt-h);
+	z-index: 0;
+	position: relative;
+}
+.snav::before {
+	z-index: -1;
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-image: url("https://www.publicdomainpictures.net/pictures/200000/velka/circuit-board-1477415362NkY.jpg");
+	background-size: cover;
+	filter: blur(2px);
+}
+.snav > ul {
+	list-style-type: none;
+}
+.snav li {
+	display: block;
+	margin: 3px 0;
+}
+.snav-link {
+	height: var(--snav-link-h);
+	display: block;
+	text-decoration: none;
+	box-shadow: 0 0 4px 2px inset #ABC;
+	display: flex;
+	align-items: flex-start;
+	border-bottom-right-radius: 20px;
+	border-top-right-radius: 20px;
+	background: linear-gradient(0deg, #555, #777, #555);
+}
+.snav-list-item:nth-child(n+1) {
+	border-left: 4px solid hsl(5, 100%, 50%);
+}
+.snav-list-item:nth-child(n+2) {
+	border-left: 4px solid hsl(45, 100%, 50%);
+}
+.snav-list-item:nth-child(n+3) {
+	border-left: 4px solid hsl(85, 100%, 50%);
+}
+.snav-list-item:nth-child(n+4) {
+	border-left: 4px solid hsl(125, 100%, 50%);
+}
+.snav-list-item:nth-child(n+5) {
+	border-left: 4px solid hsl(165, 100%, 50%);
+}
+.snav-link-icon {
+	display: none;
+}
+.snav-link-text {
+	display: inline-block;
+	padding: 10px 10px 10px 5px;
+	margin-right: 2px;
+	font-family: Orbitron, Monospace;
+	position: relative;
+	color: white;
 }
 /* Content */
 .cont {
-	background-color: pink;
+	height: 100%;
+	background-color: black;
 }
 /* Footer */
 .foot {
-	position: absolute;
-	bottom: 0;
 	width: 100%;
 	height: 40px;
 	background: linear-gradient(0deg, #444, #666);
