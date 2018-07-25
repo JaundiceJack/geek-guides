@@ -48,6 +48,7 @@ body {
 .foot-link-icon {}
 .foot-link-text {}
 
+
 /* Desktop Layout */
 .page-grid {
 	height: 100vh;
@@ -58,7 +59,6 @@ body {
 	grid-template-areas: "tnav cont"
 						 "snav cont"
 						 "foot foot";
-	grid-gap: 10px;
 }
 .page-grid-item.tnav {grid-area:  tnav;}
 .page-grid-item.snav {grid-area:  snav;}
@@ -233,7 +233,7 @@ body {
 /* Content */
 .cont {
 	height: 100%;
-	background-color: black;
+	background-color: #EEE;
 }
 /* Footer */
 .foot {
