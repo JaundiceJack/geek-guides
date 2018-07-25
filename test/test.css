@@ -101,6 +101,8 @@ body {
 	align-items: flex-start;
 	border-bottom-left-radius: 20px;
 	border-top-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border-top-right-radius: 20px;
 }
 .tnav-link:hover, .foot-link:hover {
 	background: linear-gradient(0deg, #555, #777);
@@ -118,7 +120,6 @@ body {
 	border-radius: 50%;
 }
 .tnav-link-text {
-	border-right: 1px solid hsl(125, 100%, 45%);
 	display: inline-block;
 	padding: 10px 10px 10px 5px;
 	margin-right: 2px;
