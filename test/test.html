@@ -15,35 +15,38 @@
 <body>
 	<div class="page-grid">
 		<!-- Top navigation bar -->
-		<nav class="page-grid-item tnav tnav-flex">
-			<header class="tnav-head tnav-flex-item">
-				<h1>Geek-Guides</h1>
-			</header>
-			<ul class="tnav-flex-item link-flex">
-				<li class="tnav-li link-flex-item">
+		<nav class="page-grid-item tnav">
+			<ul class="tnav-flex">
+				<li class="tnav-flex-item">
+					<header class="tnav-head">
+						<h1 class="tnav-tablet-head">GG</h1>
+						<h1 class="tnav-desktop-head">Geek-Guides</h1>
+					</header>
+				</li>
+				<li class="tnav-flex-item">
 					<a id="ardLink" href="#" class="tnav-link">
 						<div class="tnav-link-icon">
 							<i class="fas fa-infinity fa-lg"></i>
 						</div>
-						<p class="tnav-link-text">
+						<p id="ardText" class="tnav-link-text">
 						Arduino</p>
 					</a>
 				</li>
-				<li class="tnav-li link-flex-item">
+				<li class="tnav-flex-item">
 					<a id="piLink" href="#" class="tnav-link">
 						<div class="tnav-link-icon">
 							<i class="fas fa-bong fa-lg"></i>
 						</div>
-						<p class="tnav-link-text">
+						<p id="piText" class="tnav-link-text">
 						Raspberry Pi</p>
 					</a>
 				</li>
-				<li class="tnav-li link-flex-item">
+				<li class="tnav-flex-item">
 					<a id="nixLink" href="#" class="tnav-link">
 						<div class="tnav-link-icon">
 							<i class="fab fa-linux fa-lg"></i>
 						</div>
-						<p class="tnav-link-text">
+						<p id="nixText" class="tnav-link-text">
 						Linux</p>
 					</a>
 				</li>
@@ -51,21 +54,21 @@
 
 		</nav>
 		<!-- Side navigation bar -->
-		<nav class="page-grid-item snav snav-flex">
-			<ul class="snav-flex-item link-flex">
-				<li class="link-flex-item">
+		<nav class="page-grid-item snav">
+			<ul class="snav-flex">
+				<li class="snav-flex-item">
 					<a href="" class="snav-link">
 						<p class="snav-link-icon">1</p>
 						<p class="snav-link-text">Topic1</p>
 					</a>
 				</li>
-				<li class="link-flex-item">
+				<li class="snav-flex-item">
 					<a href="" class="snav-link">
 						<p class="snav-link-icon">2</p>
 						<p class="snav-link-text">Topic2</p>
 					</a>
 				</li>
-				<li class="link-flex-item">
+				<li class="snav-flex-item">
 					<a href="" class="snav-link">
 						<p class="snav-link-icon">3</p>
 						<p class="snav-link-text">Topic3</p>
@@ -86,15 +89,16 @@
 			</section>
 		</main>
 		<!-- Footer -->
-		<footer class="page-grid-item foot foot-flex">
-			<ul class="foot-list foot-flex-item">
-				<li class="foot-list-item">
+		<footer class="page-grid-item foot">
+			<ul class="foot-list foot-flex">
+				<li class="foot-flex-item">
 					<a href="" class="foot-link">About</a>
 				</li>
-				<li class="foot-list-item">
+				<li class="foot-flex-item">
+					<div class="foot-link-icon"></div>
 					<a href="" class="foot-link">Contact</a>
 				</li>
-				<li class="foot-list-item">
+				<li class="foot-flex-item">
 					<a href="" class="foot-link">
 						<div class="foot-link-icon">
 							<i class="fab fa-github-alt"></i>
