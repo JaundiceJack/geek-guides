@@ -1,14 +1,11 @@
 :root {
-	--tnav-dt-w: 220px;
-	--tnav-dt-h: 210px;
-	--snav-dt-w: 220px;
-	--snav-dt-h: 100%;
-	--snav-link-h: 40px;
+	--navBackgroundImg: url("https://www.publicdomainpictures.net/pictures/200000/velka/circuit-board-1477415362NkY.jpg");
 }
-
-html {height: 100%;}
+html {
+	height: 100%;
+}
 body {
-	width: 100%;
+	min-width: 100%;
 	min-height: 100%;
 	background-color: black;
 }
@@ -33,6 +30,8 @@ body {
 /* Style Classes */
 .tnav {}
 .tnav-head {}
+.tnav-tablet-head {}
+.tnav-desktop-head {}
 .tnav-list {}
 .tnav-li {}
 .tnav-link {}
@@ -40,6 +39,8 @@ body {
 .tnav-link-icon {}
 .snav {}
 .snav-link {}
+.snav-link-icon {}
+.snav-link-text {}
 .cont {}
 .foot {}
 .foot-list {}
@@ -51,11 +52,12 @@ body {
 
 /* Desktop Layout */
 .page-grid {
-	height: 100vh;
-	width: 100%;
+	/* fill the viewport with the page grid */
+	min-height: 100vh;
+	min-width: 100vw;
 	display: grid;
-	grid-template-columns: var(--tnav-dt-w) 1fr;
-	grid-template-rows: var(--tnav-dt-h) 1fr 40px;
+	grid-template-columns: 210px 1fr;
+	grid-template-rows: 220px 1fr 40px;
 	grid-template-areas: "tnav cont"
 						 "snav cont"
 						 "foot foot";
@@ -65,18 +67,20 @@ body {
 .page-grid-item.cont {grid-area:  cont;}
 .page-grid-item.foot {grid-area:  foot;}
 .tnav-flex {
+	margin: 5px 5px;
 	display: flex;
 	flex-flow: column nowrap;
-	justify-content: flex-start;
-	align-items: flex-start;
 }
-.link-flex {
-	width: 90%;
-	margin: 10px;
+.tnav-flex-item {
+	margin: 5px 0;
+}
+.snav-flex {
+	margin: 10px 5px 10px 0;
 	display: flex;
 	flex-flow: column nowrap;
-	justify-content: flex-start;
-	align-items: stretch;
+}
+.snav-flex-item {
+	margin: 5px 0;
 }
 .foot-flex {
 	display: flex;
@@ -88,71 +92,73 @@ body {
 /* Desktop Styling */
 /* Top Navigation Bar */
 .tnav {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: var(--tnav-dt-w);
-	height: var(--tnav-dt-h);
-	background-color: black;
+	background-color: transparent;
 }
 .tnav::before {
-	z-index: -1;
 	content: "";
+	z-index: -1;
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	background-position: left top;
-	background-image: url("https://www.publicdomainpictures.net/pictures/200000/velka/circuit-board-1477415362NkY.jpg");
-	background-size: cover;
-	filter: blur(4px);
+	top: 0;
+	left: 0;
+	background-image: var(--navBackgroundImg);
+	filter: blur(2px);
 }
 .tnav-head {
+	display: inline-block;
+	padding: 5px 0;
+	text-align: center;
 	font-family: Orbitron, Monospace;
 	color: hsl(135, 100%, 45%);
-	padding: 5px;
-	background: radial-gradient(#EEE, #CCC);
+	background: radial-gradient(#555, #111);
 	border-radius: 4px;
 	box-shadow: 0 0 4px 2px inset #ABC;
-	margin: 10px;
+	width: 200px;
+}
+.tnav-desktop-head {
+	display: inline-block;
+}
+.tnav-tablet-head {
+	display: none;
 }
 .tnav > ul {
 	list-style-type: none;
 }
-.tnav li {
-	display: block;
-	margin: 3px 0;
-}
 .tnav-link {
-	z-index: 0;
 	display: block;
 	text-decoration: none;
-	box-shadow: 0 0 4px 2px inset #ABC;
-	display: flex;
-	border-radius: 20px;
-	background: linear-gradient(0deg, #555, #777, #555);
+	position: relative;
 }
-.tnav-link:hover, .foot-link:hover {
+.tnav-link:hover .tnav-link-text {
 	background: linear-gradient(0deg, #555, #777);
 }
 .tnav-link-icon {
+	display: inline-block;
 	z-index: 1;
-	background: radial-gradient(#9AB, #456);
-	min-width: 40px;
-	height: 40px;
+	position: relative;
+	width: 42px;
+	height: 42px;
 	text-align: center;
 	padding-top: 10px;
-	display: inline-block
+	
 	background-color: #666;
+	background: radial-gradient(#9AB, #456);
 	box-shadow: 0 0 4px 2px inset #123;
 	border-radius: 50%;
 }
 .tnav-link-text {
 	display: inline-block;
-	padding: 10px 10px 10px 5px;
-	margin-right: 2px;
+	z-index: 0;
+	position: absolute;
+	left: 1px;
+	padding: 10px 10px 10px 52px;
+	
 	font-family: Orbitron, Monospace;
-	position: relative;
-	color: white;
+	box-shadow: 0 0 4px 2px inset #ABC;
+	border-radius: 20px;
+	background: linear-gradient(0deg, #555, #777, #555);
+	width: 200px;
 }
 .tnav-link-text::after {
 	content: "";
@@ -169,8 +175,6 @@ body {
 #nixLink .tnav-link-text {color: hsl(35, 75%, 65%);}
 /* Side Navigation Bar */
 .snav {
-	width: var(--snav-dt-w);
-	height: var(--snav-dt-h);
 	z-index: 0;
 	position: relative;
 }
@@ -182,45 +186,42 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background-image: url("https://www.publicdomainpictures.net/pictures/200000/velka/circuit-board-1477415362NkY.jpg");
-	background-size: cover;
+	background-image: var(--navBackgroundImg);
 	filter: blur(2px);
 }
 .snav > ul {
 	list-style-type: none;
 }
-.snav li {
-	display: block;
-	margin: 3px 0;
-}
 .snav-link {
-	height: var(--snav-link-h);
 	display: block;
 	text-decoration: none;
 	box-shadow: 0 0 4px 2px inset #ABC;
-	display: flex;
-	align-items: flex-start;
 	border-bottom-right-radius: 20px;
 	border-top-right-radius: 20px;
 	background: linear-gradient(0deg, #555, #777, #555);
 }
-.snav-list-item:nth-child(n+1) {
-	border-left: 4px solid hsl(5, 100%, 50%);
+.snav-flex-item:nth-child(n+1) {
+	border-left: 5px solid hsl(5, 100%, 40%);
 }
-.snav-list-item:nth-child(n+2) {
-	border-left: 4px solid hsl(45, 100%, 50%);
+.snav-flex-item:nth-child(n+2) {
+	border-left: 5px solid hsl(45, 100%, 40%);
 }
-.snav-list-item:nth-child(n+3) {
-	border-left: 4px solid hsl(85, 100%, 50%);
+.snav-flex-item:nth-child(n+3) {
+	border-left: 5px solid hsl(85, 100%, 40%);
 }
-.snav-list-item:nth-child(n+4) {
-	border-left: 4px solid hsl(125, 100%, 50%);
+.snav-flex-item:nth-child(n+4) {
+	border-left: 5px solid hsl(125, 100%, 40%);
 }
-.snav-list-item:nth-child(n+5) {
-	border-left: 4px solid hsl(165, 100%, 50%);
+.snav-flex-item:nth-child(n+5) {
+	border-left: 5px solid hsl(165, 100%, 40%);
 }
 .snav-link-icon {
 	display: none;
+	padding: 10px 10px 10px 5px;
+	margin-right: 2px;
+	font-family: Orbitron, Monospace;
+	position: relative;
+	color: white;
 }
 .snav-link-text {
 	display: inline-block;
@@ -232,24 +233,19 @@ body {
 }
 /* Content */
 .cont {
-	height: 100%;
 	background-color: #EEE;
 }
 /* Footer */
 .foot {
-	width: 100%;
-	height: 40px;
 	background: linear-gradient(0deg, #444, #666);
 }
 .foot-list {
 	list-style-type: none;
 }
 .foot-list-item {
-	height: 100%;
 	display: inline-block;
 }
 .foot-link {
-	height: 100%;
 	display: block;
 	text-decoration: none;
 	padding: 5px;
@@ -268,30 +264,72 @@ body {
 @media screen and (max-width: 760px) {
 	.page-grid {
 		display: grid;
-		grid-template-columns: 100px 1fr;
-		grid-template-rows: repeat(3, auto);
-		grid-template-areas: "tnav tnav"
+		grid-template-columns: 52px 1fr;
+		grid-template-rows: 220px 1fr 40px;
+		grid-template-areas: "tnav cont"
 							 "snav cont"
 							 "foot foot";
 	}
+	.tnav-flex {
+		margin: 5px;
+	}
+
+
+	.tnav-head {
+		font-size: 12px;
+		width: 42px;
+		height: 42px;
+		padding: 10px 5px;
+	}
+	.tnav-desktop-head {
+		display: none;
+	}
+	.tnav-tablet-head {
+		display: block;
+	}
+	
+	.tnav-link-text {
+		display: none;
+	}
+	.snav-link {
+		text-align: center;
+	}
+	.snav-link-icon {
+		display: inline-block;
+	}
+	.snav-link-text {
+		display: none;
+	}
+	#ardLink:hover #ardText {display: inline-block;}
+	#piLink:hover #piText {display: inline-block;}
+	#nixLink:hover #nixText{display: inline-block;}
 }
 /* Phone Layout & Styling */
 @media screen and (max-width: 480px) {
 	.page-grid {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		grid-template-rows: repeat(3, auto);
+		grid-template-rows: 62px 1fr 62px;
 		grid-template-areas: "snav snav"
 							 "cont cont"
 							 "tnav foot";
 	}
 	.page-grid-item.snav {margin-top: 0px;}
 	.tnav-flex {
-		justify-content: flex-start;
-	}
-	.link-flex {
 		width: 100%;
-		justify-content: space-evenly;
+		flex-flow: row nowrap;
+		justify-content: space-around;
+	}
+	.snav-flex {
+		width: 100%;
+		flex-flow: row nowrap;
+
+	}
+	.snav-flex-item {
+		margin: 0 5px;
+	}
+	.snav-flex-item:nth-child(n) {
+		border: none;
 	}
 
 	.tnav {
@@ -301,18 +339,40 @@ body {
 	.tnav-head {
 		display: none;
 	}
-	.spacer {
-		display: none;
-	}
+
 	.tnav-link-text {
 		display: none;
 	}
 	.tnav-link-icon {
 		border-radius: 0%;
 	}
+
+
+	.snav-link {
+		height: 42px;
+		width: 42px;
+		
+		box-shadow: 0 0 4px 2px inset #ABC;
+		border-bottom-right-radius: 0;
+		border-top-right-radius: 0;
+		background: linear-gradient(0deg, #555, #777, #555);
+	}
+
 	.foot {
-		position: static;
+		position: relative;
 		width: 1fr;
+		background: transparent;
+	}
+	.foot::before {
+		content: "";
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-image: var(--navBackgroundImg);
+		filter: blur(2px);
 	}
 	.foot-link-text {
 		display: none;
