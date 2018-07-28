@@ -8,16 +8,14 @@ body {
 	min-width: 100%;
 	min-height: 100%;
 	background-color: black;
+	/* stretch the page to the bottom */
+	display: flex;
 }
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
-
-/* TODO: Give desktop/tablet foot links padding
-instead of foot-flex-items having margins.
-remember to correct phone version. */ 
 
 
 /* Layout Classes */
@@ -58,16 +56,19 @@ remember to correct phone version. */
 #contactLink {}
 #githubLink {}
 
+/* TODO: mostly fix/implement mouseover transitions */
+
+
 /* Desktop Layout */
 .page-grid {
 	/* fill the viewport with the page grid */
-	height: 100vh;
+	//height: 100vh;
 	display: grid;
 	grid-template-columns: 210px 1fr;
 	grid-template-rows: 220px 1fr 42px;
 	grid-template-areas: "tnav cont"
 						 "snav cont"
-						 "foot foot";	
+						 "foot foot";
 }
 .page-grid-item.tnav {grid-area:  tnav;}
 .page-grid-item.snav {grid-area:  snav;}
@@ -253,6 +254,8 @@ remember to correct phone version. */
 }
 /* Footer */
 .foot {
+	position: relative;
+	width: 1fr;
 	background: linear-gradient(0deg, #222, #444);
 }
 .foot > ul {
@@ -293,8 +296,8 @@ remember to correct phone version. */
 		grid-template-columns: 52px 1fr;
 		grid-template-rows: 220px 1fr 40px;
 		grid-template-areas: "tnav cont"
-							 "snav cont"
-							 "foot foot";
+							 					 "snav cont"
+							 				 	 "foot foot";
 	}
 	.tnav-flex {
 		margin: 5px;
@@ -340,8 +343,8 @@ remember to correct phone version. */
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 62px 1fr 62px;
 		grid-template-areas: "snav snav"
-							 "cont cont"
-							 "tnav foot";
+							 					 "cont cont"
+							 				   "tnav foot";
 	}
 	.page-grid-item.snav {margin-top: 0px;}
 	.tnav-flex {
@@ -352,6 +355,8 @@ remember to correct phone version. */
 	.tnav-flex-item {
 		padding: 5px 0;
 	}
+	/* Hide the header. I guess i could
+	 just set its padding/margin to 0 but w/e */
 	.tnav-flex-item:nth-child(1) {
 		display: none;
 	}
