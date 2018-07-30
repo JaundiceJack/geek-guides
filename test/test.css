@@ -7,7 +7,7 @@ html {
 body {
 	min-width: 100%;
 	min-height: 100%;
-	background-color: black;
+	background-color: #333;
 	/* stretch the page to the bottom */
 	display: flex;
 }
@@ -56,45 +56,40 @@ body {
 #contactLink {}
 #githubLink {}
 
-/* TODO: mostly fix/implement mouseover transitions */
-
+/* TODO: mostly fix/implement mouseover transitions
+		copy code into other versions, extract common code out*/
+/* */
 
 /* Desktop Layout */
 .page-grid {
-	/* fill the viewport with the page grid */
-	//height: 100vh;
 	display: grid;
-	grid-template-columns: 210px 1fr;
-	grid-template-rows: 220px 1fr 42px;
-	grid-template-areas: "tnav cont"
-						 "snav cont"
-						 "foot foot";
 }
-.page-grid-item.tnav {grid-area:  tnav;}
-.page-grid-item.snav {grid-area:  snav;}
-.page-grid-item.cont {grid-area:  cont;}
-.page-grid-item.foot {grid-area:  foot;}
-.tnav-flex {
-	margin: 5px;
+.page-grid-item.tnav {
+	grid-area:  tnav;
+}
+.page-grid-item.snav {
+	grid-area:  snav;
+}
+.page-grid-item.cont {
+	grid-area:  cont;
+}
+.page-grid-item.foot {
+	grid-area:  foot;
+}
+.tnav-flex, .snav-flex, .foot-flex {
 	display: flex;
-	flex-flow: column nowrap;
 }
-.tnav-flex-item {
-	padding: 5px 0;
-}
+
 .snav-flex {
 	padding: 10px 5px 10px 0;
-	display: flex;
-	flex-flow: column nowrap;
 }
-.snav-flex-item {
+.tnav-flex-item, .snav-flex-item {
 	margin: 5px 0;
 }
 .cont-grid {
 	padding: 25px;
 }
 .foot-flex {
-	display: flex;
 	flex-flow: row nowrap;
 	justify-content: center;
 }
@@ -105,7 +100,8 @@ body {
 
 /* Desktop Styling */
 /* Top Navigation Bar */
-.tnav {
+.tnav, .snav {
+	z-index: 0;
 	position: relative;
 	background-color: transparent;
 }
@@ -149,8 +145,7 @@ body {
 .tnav-link:hover .tnav-link-text {
 	background: linear-gradient(0deg, #555, #777);
 }
-.tnav-link-icon {
-	display: inline-block;
+.tnav-link-icon, .foot-link-icon {
 	z-index: 1;
 	position: relative;
 	width: 42px;
@@ -160,8 +155,12 @@ body {
 
 	background: radial-gradient(#DEF, #456);
 	box-shadow: 0 0 4px 2px inset #123;
+}
+.tnav-link-icon {
+	display: inline-block;
 	border-radius: 50%;
 }
+
 .tnav-link-text {
 	display: inline-block;
 	z-index: 0;
@@ -176,14 +175,7 @@ body {
 	width: 198px;
 	height: 40px;
 }
-.tnav-link-text::after {
-	/* Experimenting with text outlines */
-	content: "";
-	font-size: 18px;
-	position: absolute;
-	left: 0;
-	color: hsl(125, 100%, 95%);
-}
+
 #ardLink .tnav-link-icon {color: hsl(200, 100%, 45%);}
 #piLink .tnav-link-icon {color: hsl(320, 100%, 40%);}
 #nixLink .tnav-link-icon {color: hsl(35, 75%, 40%);}
@@ -191,10 +183,7 @@ body {
 #piLink .tnav-link-text {color: hsl(320, 100%, 70%);}
 #nixLink .tnav-link-text {color: hsl(35, 75%, 65%);}
 /* Side Navigation Bar */
-.snav {
-	z-index: 0;
-	position: relative;
-}
+.snav {}
 .snav::before {
 	z-index: -1;
 	content: "";
@@ -250,7 +239,9 @@ body {
 }
 /* Content */
 .cont {
+	margin: 20px;
 	background-color: #EEE;
+	border-radius: 10px;
 }
 /* Footer */
 .foot {
@@ -289,15 +280,34 @@ body {
 	to {width: 198px, opacity: 0.9;}
 }
 
+/* Desktop Layout & Styling */
+@media screen and (min-width: 1081px) {
+	.page-grid {
+		grid-template-columns: 210px 1fr;
+		grid-template-rows: 220px 1fr 42px;
+		grid-template-areas: "tnav cont"
+												 "snav cont"
+												 "foot foot";
+	}
+	.tnav-flex, .snav-flex {
+		flex-flow: column nowrap;
+	}
+	.tnav-flex {
+		margin: 5px;
+	}
+}
+
 /* Tablet Layout & Styling */
 @media screen and (max-width: 1080px) {
 	.page-grid {
-		display: grid;
 		grid-template-columns: 52px 1fr;
 		grid-template-rows: 220px 1fr 40px;
 		grid-template-areas: "tnav cont"
 							 					 "snav cont"
 							 				 	 "foot foot";
+	}
+	.tnav-flex, .snav-flex {
+		flex-flow: column nowrap;
 	}
 	.tnav-flex {
 		margin: 5px;
@@ -339,7 +349,6 @@ body {
 /* Phone Layout & Styling */
 @media screen and (max-width: 480px) {
 	.page-grid {
-		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 62px 1fr 62px;
 		grid-template-areas: "snav snav"
@@ -354,6 +363,7 @@ body {
 	}
 	.tnav-flex-item {
 		padding: 5px 0;
+		margin: 0;
 	}
 	/* Hide the header. I guess i could
 	 just set its padding/margin to 0 but w/e */
@@ -442,14 +452,5 @@ body {
 	}
 	.foot-link-icon {
 		display: inline-block;
-		z-index: 1;
-		position: relative;
-		width: 42px;
-		height: 42px;
-		text-align: center;
-		padding-top: 12px;
-
-		background: radial-gradient(#DEF, #456);
-		box-shadow: 0 0 4px 2px inset #123;
 	}
 }
