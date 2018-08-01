@@ -3,25 +3,20 @@
 }
 html {
 	min-height: 100%;
+	/* stretch content to bottom of page */
+	display: flex;
 }
 body {
 	min-width: 100%;
 	min-height: 100%;
-	background-color: #333;
-	/* stretch the page to the bottom */
+	background-image: var(--navBackgroundImg);
+	background-size: cover;
+
+	/* stretch content to bottom of page */
 	display: flex;
 }
 body::before {
 	content: "";
-	z-index: -1;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	background-image: var(--navBackgroundImg);
-	background-size: 100px 100px;
-	background-repeat: repeat;
 	filter: blur(2px);
 }
 * {
@@ -350,6 +345,15 @@ body::before {
 }
 /* Phone Layout & Styling */
 @media screen and (max-width: 480px) {
+	body {
+		background-image: none;
+		background-color: #666;
+	}
+	body::before {
+		content: "";
+		background-image: none;
+		background-color: #CCC;
+	}
 	.page-grid {
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 62px 1fr 62px;
@@ -399,7 +403,7 @@ body::before {
 		width: 1fr;
 		background-color: transparent;
 	}
-	.tnav::before, .foot::before {
+	.tnav::before, .snav::before, .foot::before {
 		content: "";
 		z-index: -1;
 		width: 100%;
@@ -433,7 +437,7 @@ body::before {
 		border-top-right-radius: 0;
 		background: linear-gradient(0deg, #555, #777, #555);
 	}
-	
+
 	.foot-link-text {
 		display: none;
 	}
