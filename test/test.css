@@ -39,6 +39,8 @@ body::before {
 .tnav-flex-item {}
 .snav-flex {}
 .snav-flex-item {}
+.pnav-flex {}
+.pnav-flex-item {}
 .cont-grid {}
 .cont-grid-item {}
 .foot-flex {}
@@ -56,6 +58,10 @@ body::before {
 .snav-link {}
 .snav-link-icon {}
 .snav-link-text {}
+.pnav {}
+.pnav-link {}
+.pnav-link-icon {}
+.pnav-link-text {}
 .cont {}
 .foot {}
 .foot-link {}
@@ -141,7 +147,7 @@ body::before {
 	width: 200px;
 }
 
-.tnav > ul {
+.tnav > ul, .snav > ul {
 	list-style-type: none;
 }
 .tnav-link {
@@ -189,33 +195,13 @@ body::before {
 #ardLink .tnav-link-text {color: hsl(200, 100%, 70%);}
 #piLink .tnav-link-text {color: hsl(320, 100%, 70%);}
 #nixLink .tnav-link-text {color: hsl(35, 75%, 65%);}
-/* Side Navigation Bar */
-.snav {}
 
-.snav > ul {
-	list-style-type: none;
-}
 .snav-link {
 	display: block;
 	text-decoration: none;
 	box-shadow: 0 0 4px 2px inset #ABC;
 	border-radius: 0 15px 15px 0;
 	background: linear-gradient(0deg, #555, #777, #555);
-}
-.snav-flex-item:nth-child(n+1) {
-	border-left: 5px solid hsl(5, 100%, 40%);
-}
-.snav-flex-item:nth-child(n+2) {
-	border-left: 5px solid hsl(45, 100%, 40%);
-}
-.snav-flex-item:nth-child(n+3) {
-	border-left: 5px solid hsl(85, 100%, 40%);
-}
-.snav-flex-item:nth-child(n+4) {
-	border-left: 5px solid hsl(125, 100%, 40%);
-}
-.snav-flex-item:nth-child(n+5) {
-	border-left: 5px solid hsl(165, 100%, 40%);
 }
 .snav-link-icon {
 	display: none;
@@ -275,6 +261,11 @@ body::before {
 	from {width: 52px; opacity: 0.5}
 	to {width: 198px, opacity: 0.9;}
 }
+
+
+/* TODO: Find a place within the grid
+for the pnav. It should be placed near the top
+right corner, fixed above the content */
 
 /* Desktop Layout & Styling */
 @media screen and (min-width: 1081px) {
