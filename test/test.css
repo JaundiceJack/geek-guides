@@ -96,21 +96,105 @@ body::before {
 .page-grid-item.foot {
 	grid-area:  foot;
 }
-.snav-flex, .tnav-flex, .foot-flex {
+.snav-flex, .tnav-flex, .pnav-flex, .foot-flex {
 	display: flex;
 }
 /* End of Layout CSS */
 
 
 /* Styling CSS */
-
-
-
-
-
-
-
-
+.snav, .tnav, .pnav {
+	position: relative;
+}
+.snav-head {
+	background: radial-gradient(#555, #111);
+	border-radius: 4px;
+	box-shadow: 0 0 4px 2px inset #ABC;
+	color: hsl(135, 100%, 45%);
+	font-family: Orbitron, Monospace;
+	padding: 1em 0 1em 0;
+	text-align: center;
+}
+.snav > ul, .tnav > ul, .pnav > ul, .foot > ul{
+	list-style-type: none;
+}
+.snav-link {
+	display: block;
+	text-decoration: none;
+	position: relative;
+}
+.snav-link:hover .snav-link-text {
+	background: linear-gradient(0deg, #555, #777);
+}
+.snav-link-icon {
+	background: radial-gradient(#DEF, #456);
+	box-shadow: 0 0 4px 2px inset #123;
+	display: inline-block;
+	height: 42px;
+	padding-top: 12px;
+	position: relative;
+	text-align: center;
+	width: 42px;
+	z-index: 1;
+}
+.snav-link-text {
+	background: linear-gradient(0deg, #555, #777, #555);
+	border-radius: 20px 15px 15px 20px;
+	box-shadow: 0 0 4px 2px inset #ABC;
+	font-family: Orbitron, Monospace;	
+	height: 40px;
+	left: 0;
+	padding: 10px 10px 10px 50px;
+	position: absolute;
+	width: 198px;
+	z-index: 0;
+}
+.tnav-link {
+	box-shadow: 0 0 4px 2px inset #ABC;
+	display: block;
+	text-decoration: none;
+}
+.tnav-link-icon {
+	font-family: Orbitron, Monospace;
+	padding: 10px 10px 10px 5px;
+	position: relative;
+}
+.tnav-link-text {
+	color: white;
+	font-family: Orbitron, Monospace;
+	padding: 10px 10px 10px 5px;
+	position: relative;
+}
+.cont {
+	margin: 10px;
+	background-color: #EEE;
+	border-radius: 10px;
+}
+.foot {
+	background: linear-gradient(0deg, #222, #444);
+	position: relative;
+}
+.foot-link {
+	display: block;
+	text-decoration: none;
+}
+.foot-link:hover {
+	background: linear-gradient(0deg, #444, #666);
+}
+.foot-link-text {
+	color: hsl(45, 100%, 45%);
+	font-family: Orbitron, Monospace;
+}
+.foot-link-icon {
+	background: radial-gradient(#DEF, #456);
+	box-shadow: 0 0 4px 2px inset #123;
+	height: 42px;
+	padding-top: 12px;
+	position: relative;
+	text-align: center;
+	width: 42px;
+	z-index: 1;
+}
 
 #ardLink .snav-link-icon {color: hsl(200, 100%, 45%);}
 #piLink .snav-link-icon {color: hsl(320, 100%, 40%);}
@@ -137,11 +221,13 @@ right corner, fixed above the content */
 @media screen and (min-width: 1081px) {
 	/* Layout CSS */
 	.page-grid {
-		grid-template-columns: 210px 1fr;
-		grid-template-rows: auto 1fr 42px;
-		grid-template-areas: "snav cont"
-							           "tnav cont"
-							           "foot foot";
+		grid-template-columns: 210px 1fr 210px;
+		grid-template-rows: 52px auto 1fr 42px;
+		grid-template-areas: 
+		"snav .    pnav"
+		"snav cont cont"
+		"tnav cont cont"
+		"foot foot foot";
 	}
 	.snav-flex {
 		flex-flow: column nowrap;
@@ -157,6 +243,14 @@ right corner, fixed above the content */
 	.snav-flex-item, .tnav-flex-item {
 		margin: 5px 0;
 	}
+	.pnav-flex {
+		flex-flow: row nowrap;
+		position: fixed;
+		top: 0;
+	}
+	.pnav-flex-item {
+
+	}
 	.cont-grid {
 		padding: 25px;
 	}
@@ -169,21 +263,14 @@ right corner, fixed above the content */
 	}
 
 	/*Styling CSS */
-	.snav, .tnav {
+	.snav, .tnav, .pnav {
 		background-color: transparent;
 	}
 	.snav-head {
 		display: inline-block;
-		padding: 1em 0 1em 0;
-		text-align: center;
-		font-family: Orbitron, Monospace;
 		font-size: 16px;
-		color: hsl(135, 100%, 45%);
-		background: radial-gradient(#555, #111);
-		border-radius: 4px;
-		box-shadow: 0 0 4px 2px inset #ABC;
-		width: 200px;
 		height: 42px;
+		width: 200px;
 	}
 	.snav-desktop-head {
 		display: inline-block;
@@ -191,98 +278,29 @@ right corner, fixed above the content */
 	.snav-tablet-head {
 		display: none;
 	}
-	.snav > ul, .tnav > ul, .pnav > ul {
-		list-style-type: none;
-	}
-	.snav-link {
-		display: block;
-		text-decoration: none;
-		position: relative;
-	}
 	.snav-link:hover .snav-link-text {
-		background: linear-gradient(0deg, #555, #777);
 		display: inline-block;
-		animation: none;
 	}
 	.snav-link-icon {
-		background: radial-gradient(#DEF, #456);
 		border-radius: 50%;
-		box-shadow: 0 0 4px 2px inset #123;
-		display: inline-block;
-		height: 42px;
-		padding-top: 12px;
-		position: relative;
-		text-align: center;
-		width: 42px;
-		z-index: 1;
 	}
 	.snav-link-text {
-		background: linear-gradient(0deg, #555, #777, #555);
-		border-radius: 20px 15px 15px 20px;
-		box-shadow: 0 0 4px 2px inset #ABC;
 		display: inline-block;
-		font-family: Orbitron, Monospace;
-		height: 40px;
-		left: 2px;
-		padding: 10px 10px 10px 52px;
-		position: absolute;
-		width: 198px;
-		z-index: 0;
 	}
 	.tnav-link {
-		background: linear-gradient(0deg, #555, #777, #555);
 		border-radius: 0 15px 15px 0;
-		box-shadow: 0 0 4px 2px inset #ABC;
-		display: block;
-		text-decoration: none;
 	}
 	.tnav-link-icon {
 		display: none;
-		font-family: Orbitron, Monospace;
-		padding: 10px 10px 10px 5px;
-		position: relative;
 	}
 	.tnav-link-text {
-		color: white;
 		display: inline-block;
-		font-family: Orbitron, Monospace;
-		padding: 10px 10px 10px 5px;
-		position: relative;
-	}
-	.cont {
-		margin: 10px;
-		background-color: #EEE;
-		border-radius: 10px;
-	}
-	.foot {
-		background: linear-gradient(0deg, #222, #444);
-		position: relative;
-	}
-	.foot li {
-		display: inline-block;
-	}
-	.foot-link {
-		display: block;
-		text-decoration: none;
-	}
-	.foot-link:hover {
-		background: linear-gradient(0deg, #444, #666);
-	}
+	}	
 	.foot-link-text {
-		color: hsl(45, 100%, 45%);
 		display: inline-block;
-		font-family: Orbitron, Monospace;
 	}
 	.foot-link-icon {
-		background: radial-gradient(#DEF, #456);
-		box-shadow: 0 0 4px 2px inset #123;
 		display: none;
-		height: 42px;
-		padding-top: 12px;
-		position: relative;
-		text-align: center;
-		width: 42px;
-		z-index: 1;
 	}
 }
 
@@ -290,21 +308,25 @@ right corner, fixed above the content */
 @media screen and (max-width: 1080px) {
 	/* Layout CSS */
 	.page-grid {
-		grid-template-columns: 52px 1fr;
-		grid-template-rows: auto 1fr 40px;
-		grid-template-areas: "snav cont"
-							 					 "tnav cont"
-							 				 	 "foot foot";
+		grid-template-columns: 52px 1fr 210px;
+		grid-template-rows: 42px auto 1fr 42px;
+		grid-template-areas:
+		"snav tnav pnav"
+		"snav cont cont"
+		".    cont cont"
+		"foot foot foot";
+	}
+	.page-grid-item.tnav {
+		justify-self: end;
 	}
 	.snav-flex {
 		flex-flow: column nowrap;
 		margin: 5px;
 	}
 	.tnav-flex {
-		flex-flow: column nowrap;
-		padding: 10px 5px 10px 0;
-		position: -webkit-sticky; /* Safari Sticky */
-		position: sticky;
+		flex-flow: row nowrap;
+		padding: 0;
+		position: fixed;
 		top: 0;
 	}
 	.snav-flex-item, .tnav-flex-item {
@@ -322,24 +344,14 @@ right corner, fixed above the content */
 	}
 
 	/*Styling CSS */
-	.snav {
-		background-color: transparent;
-	}
-	.tnav {
+	.snav, .tnav, .pnav {
 		background-color: transparent;
 	}
 	.snav-head {
 		display: inline-block;
 		font-size: 12px;
-		width: 42px;
 		height: 42px;
-		padding: 1em 0 1em 0;
-		text-align: center;
-		font-family: Orbitron, Monospace;
-		color: hsl(135, 100%, 45%);
-		background: radial-gradient(#555, #111);
-		border-radius: 4px;
-		box-shadow: 0 0 4px 2px inset #ABC;
+		width: 42px;
 	}
 	.snav-desktop-head {
 		display: none;
@@ -347,101 +359,33 @@ right corner, fixed above the content */
 	.snav-tablet-head {
 		display: block;
 	}
-	.snav > ul, .tnav > ul, .pnav > ul {
-		list-style-type: none;
-	}
-	.snav-link {
-		display: block;
-		text-decoration: none;
-		position: relative;
-	}
 	.snav-link:hover .snav-link-text {
-		background: linear-gradient(0deg, #555, #777);
 		display: inline-block;
 		animation: slidein 0.3s linear 0s 1 forwards;
 	}
-	.snav-link-icon {
-		background: radial-gradient(#DEF, #456);
-		border-radius: 50%;
-		box-shadow: 0 0 4px 2px inset #123;
-		display: inline-block;
-		height: 42px;
-		padding-top: 12px;
-		position: relative;
-		text-align: center;
-		width: 42px;
-		z-index: 1;
+	.snav-link-icon {	
+		border-radius: 50%;	
 	}
 	.snav-link-text {
-		background: linear-gradient(0deg, #555, #777, #555);
-		border-radius: 20px 15px 15px 20px;
-		box-shadow: 0 0 4px 2px inset #ABC;
 		display: none;
-		font-family: Orbitron, Monospace;
-		height: 40px;
-		left: 2px;
 		overflow: hidden;
-		padding: 10px 10px 10px 52px;
-		position: absolute;
 		white-space: nowrap;
-		width: 198px;
-		z-index: 0;
 	}
 	.tnav-link {
-		background: linear-gradient(0deg, #555, #777, #555);
 		border-radius: 0 15px 15px 0;
-		box-shadow: 0 0 4px 2px inset #ABC;
-		display: block;
 		text-align: center;
-		text-decoration: none;
 	}
 	.tnav-link-icon {
 		display: inline-block;
-		font-family: Orbitron, Monospace;
-		padding: 10px 10px 10px 5px;
-		position: relative;
 	}
 	.tnav-link-text {
-		color: white;
 		display: none;
-		font-family: Orbitron, Monospace;
-		padding: 10px 10px 10px 5px;
-		position: relative;
-	}
-	.cont {
-		margin: 10px;
-		background-color: #EEE;
-		border-radius: 10px;
-	}
-	.foot {
-		background: linear-gradient(0deg, #222, #444);
-		position: relative;
-	}
-	.foot li {
-		display: inline-block;
-	}
-	.foot-link {
-		display: block;
-		text-decoration: none;
-	}
-	.foot-link:hover {
-		background: linear-gradient(0deg, #444, #666);
 	}
 	.foot-link-text {
-		color: hsl(45, 100%, 45%);
 		display: inline-block;
-		font-family: Orbitron, Monospace;
 	}
 	.foot-link-icon {
-		background: radial-gradient(#DEF, #456);
-		box-shadow: 0 0 4px 2px inset #123;
 		display: none;
-		height: 42px;
-		padding-top: 12px;
-		position: relative;
-		text-align: center;
-		width: 42px;
-		z-index: 1;
 	}
 }
 /* Phone Layout & Styling */
@@ -459,9 +403,10 @@ right corner, fixed above the content */
 	.page-grid {
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 62px 1fr 62px;
-		grid-template-areas: "tnav tnav"
-							 					 "cont cont"
-							 				   "snav foot";
+		grid-template-areas:
+		"tnav tnav"
+		"cont cont"
+		"snav foot";
 	}
 	.page-grid-item.tnav {
 		margin-top: 0px;
@@ -501,8 +446,8 @@ right corner, fixed above the content */
 
 
 	/* Styling CSS */
-	.snav, .tnav, .foot {
-		background: linear-gradient(0deg, #222, #444);;
+	.snav, .tnav, .pnav, .foot {
+		background: transparent;
 	}
 	.snav::before, .tnav::before, .foot::before {
 		content: "";
@@ -515,120 +460,33 @@ right corner, fixed above the content */
 		background-image: var(--navBackgroundImg);
 		filter: blur(2px);
 	}
-	.snav-head {
+	.snav-head, .snav-desktop-head, .snav-tablet-head {
 		display: none;
-		font-size: 12px;
-		width: 42px;
-		height: 42px;
-		padding: 1em 0 1em 0;
-		text-align: center;
-		font-family: Orbitron, Monospace;
-		color: hsl(135, 100%, 45%);
-		background: radial-gradient(#555, #111);
-		border-radius: 4px;
-		box-shadow: 0 0 4px 2px inset #ABC;
-	}
-	.snav-desktop-head {
-		display: none;
-	}
-	.snav-tablet-head {
-		display: none;
-	}
-	.snav > ul, .tnav > ul, .pnav > ul {
-		list-style-type: none;
-	}
-	.snav-link {
-		display: block;
-		text-decoration: none;
-		position: relative;
 	}
 	.snav-link:hover .snav-link-text {
-		background: linear-gradient(0deg, #555, #777);
 		display: none;
-		animation: none;
 	}
 	.snav-link-icon {
-		background: radial-gradient(#DEF, #456);
-		border-radius: 0%;
-		box-shadow: 0 0 4px 2px inset #123;
-		display: inline-block;
-		height: 42px;
-		padding-top: 12px;
-		position: relative;
-		text-align: center;
-		width: 42px;
-		z-index: 1;
+		border-radius: 0%;		
 	}
 	.snav-link-text {
-		background: linear-gradient(0deg, #555, #777, #555);
-		border-radius: 20px 15px 15px 20px;
-		box-shadow: 0 0 4px 2px inset #ABC;
 		display: none;
-		font-family: Orbitron, Monospace;
-		height: 40px;
-		left: 2px;
-		overflow: hidden;
-		padding: 10px 10px 10px 52px;
-		position: absolute;
-		white-space: nowrap;
-		width: 198px;
-		z-index: 0;
 	}
 	.tnav-link {
-		background: linear-gradient(0deg, #555, #777, #555);
 		border-radius: 0 0 0 0;
-		box-shadow: 0 0 4px 2px inset #ABC;
-		display: block;
 		height: 42px;
-		text-decoration: none;
 		width: 42px;
 	}
 	.tnav-link-icon {
 		display: inline-block;
-		font-family: Orbitron, Monospace;
-		padding: 10px 10px 10px 5px;
-		position: relative;
 	}
 	.tnav-link-text {
-		color: white;
 		display: none;
-		font-family: Orbitron, Monospace;
-		padding: 10px 10px 10px 5px;
-		position: relative;
-	}
-	.cont {
-		margin: 10px;
-		background-color: #EEE;
-		border-radius: 10px;
-	}
-	.foot {
-		background: linear-gradient(0deg, #222, #444);
-		position: relative;
-	}
-	.foot li {
-		display: inline-block;
-	}
-	.foot-link {
-		display: block;
-		text-decoration: none;
-	}
-	.foot-link:hover {
-		background: linear-gradient(0deg, #444, #666);
-	}
+	}	
 	.foot-link-text {
-		color: hsl(45, 100%, 45%);
 		display: none;
-		font-family: Orbitron, Monospace;
 	}
 	.foot-link-icon {
-		background: radial-gradient(#DEF, #456);
-		box-shadow: 0 0 4px 2px inset #123;
 		display: inline-block;
-		height: 42px;
-		padding-top: 12px;
-		position: relative;
-		text-align: center;
-		width: 42px;
-		z-index: 1;
 	}
 }
