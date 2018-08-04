@@ -103,9 +103,6 @@ body::before {
 
 
 /* Styling CSS */
-.snav, .tnav, .pnav {
-	position: relative;
-}
 .snav-head {
 	background: radial-gradient(#555, #111);
 	border-radius: 4px;
@@ -141,7 +138,7 @@ body::before {
 	background: linear-gradient(0deg, #555, #777, #555);
 	border-radius: 20px 15px 15px 20px;
 	box-shadow: 0 0 4px 2px inset #ABC;
-	font-family: Orbitron, Monospace;	
+	font-family: Orbitron, Monospace;
 	height: 40px;
 	left: 0;
 	padding: 10px 10px 10px 50px;
@@ -149,7 +146,11 @@ body::before {
 	width: 198px;
 	z-index: 0;
 }
+.tnav {
+	overflow-y: scroll;
+}
 .tnav-link {
+	background-color: #EEE;
 	box-shadow: 0 0 4px 2px inset #ABC;
 	display: block;
 	text-decoration: none;
@@ -166,9 +167,8 @@ body::before {
 	position: relative;
 }
 .cont {
-	margin: 10px;
 	background-color: #EEE;
-	border-radius: 10px;
+	border-radius: 5px;
 }
 .foot {
 	background: linear-gradient(0deg, #222, #444);
@@ -222,12 +222,13 @@ right corner, fixed above the content */
 	/* Layout CSS */
 	.page-grid {
 		grid-template-columns: 210px 1fr 210px;
-		grid-template-rows: 52px auto 1fr 42px;
-		grid-template-areas: 
+		grid-template-rows: 52px 250px 1fr 42px;
+		grid-template-areas:
 		"snav .    pnav"
 		"snav cont cont"
 		"tnav cont cont"
 		"foot foot foot";
+		grid-gap: 10px;
 	}
 	.snav-flex {
 		flex-flow: column nowrap;
@@ -236,9 +237,6 @@ right corner, fixed above the content */
 	.tnav-flex {
 		flex-flow: column nowrap;
 		padding: 10px 5px 10px 0;
-		position: -webkit-sticky; /* Safari Sticky */
-		position: sticky;
-		top: 0;
 	}
 	.snav-flex-item, .tnav-flex-item {
 		margin: 5px 0;
@@ -263,7 +261,11 @@ right corner, fixed above the content */
 	}
 
 	/*Styling CSS */
-	.snav, .tnav, .pnav {
+	.snav {
+		position: fixed;
+		top: 0;
+	}
+	.snav, .pnav {
 		background-color: transparent;
 	}
 	.snav-head {
@@ -287,6 +289,18 @@ right corner, fixed above the content */
 	.snav-link-text {
 		display: inline-block;
 	}
+	.tnav {
+		background-color: #444;
+		border-radius: 5px;
+		border: 2px solid #ABC;
+		box-shadow: -2px 0 4px 2px solid #ABC;
+		position: fixed;
+		top: 225px;
+		left: 0;
+		bottom: 0px;
+		width: 210px;
+		z-index: 1;
+	}
 	.tnav-link {
 		border-radius: 0 15px 15px 0;
 	}
@@ -295,7 +309,7 @@ right corner, fixed above the content */
 	}
 	.tnav-link-text {
 		display: inline-block;
-	}	
+	}
 	.foot-link-text {
 		display: inline-block;
 	}
@@ -315,16 +329,17 @@ right corner, fixed above the content */
 		"snav cont cont"
 		".    cont cont"
 		"foot foot foot";
+		grid-gap: 10px;
 	}
 	.page-grid-item.tnav {
-		justify-self: end;
+		justify-self: start;
 	}
 	.snav-flex {
 		flex-flow: column nowrap;
 		margin: 5px;
 	}
 	.tnav-flex {
-		flex-flow: row nowrap;
+		flex-flow: column nowrap;
 		padding: 0;
 		position: fixed;
 		top: 0;
@@ -344,6 +359,10 @@ right corner, fixed above the content */
 	}
 
 	/*Styling CSS */
+	.snav {
+		position: fixed;
+		top: 0;
+	}
 	.snav, .tnav, .pnav {
 		background-color: transparent;
 	}
@@ -363,8 +382,8 @@ right corner, fixed above the content */
 		display: inline-block;
 		animation: slidein 0.3s linear 0s 1 forwards;
 	}
-	.snav-link-icon {	
-		border-radius: 50%;	
+	.snav-link-icon {
+		border-radius: 50%;
 	}
 	.snav-link-text {
 		display: none;
@@ -380,6 +399,9 @@ right corner, fixed above the content */
 	}
 	.tnav-link-text {
 		display: none;
+	}
+	.cont {
+		margin: 0 10px 0 0;
 	}
 	.foot-link-text {
 		display: inline-block;
@@ -401,12 +423,13 @@ right corner, fixed above the content */
 	}
 	/* Layout CSS */
 	.page-grid {
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 42px 1fr 1fr;
 		grid-template-rows: 62px 1fr 62px;
 		grid-template-areas:
-		"tnav tnav"
-		"cont cont"
-		"snav foot";
+		"tnav pnav pnav"
+		"cont cont cont"
+		"snav snav foot";
+		grid-gap: 10px;
 	}
 	.page-grid-item.tnav {
 		margin-top: 0px;
@@ -467,7 +490,7 @@ right corner, fixed above the content */
 		display: none;
 	}
 	.snav-link-icon {
-		border-radius: 0%;		
+		border-radius: 0%;
 	}
 	.snav-link-text {
 		display: none;
@@ -482,7 +505,10 @@ right corner, fixed above the content */
 	}
 	.tnav-link-text {
 		display: none;
-	}	
+	}
+	.cont {
+		margin: 0 10px;
+	}
 	.foot-link-text {
 		display: none;
 	}
