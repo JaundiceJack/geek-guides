@@ -109,7 +109,7 @@ body::before {
 	box-shadow: 0 0 4px 2px inset #ABC;
 	color: hsl(135, 100%, 45%);
 	font-family: Orbitron, Monospace;
-	padding: 1em 0 1em 0;
+	padding-top: 10px;
 	text-align: center;
 }
 .snav > ul, .tnav > ul, .pnav > ul, .foot > ul{
@@ -150,10 +150,12 @@ body::before {
 	overflow-y: scroll;
 }
 .tnav-link {
-	background-color: #EEE;
-	box-shadow: 0 0 4px 2px inset #ABC;
+	background-color: transparent;
 	display: block;
 	text-decoration: none;
+}
+.tnav-link:hover {
+	background: linear-gradient(0deg, #555, #777);
 }
 .tnav-link-icon {
 	font-family: Orbitron, Monospace;
@@ -166,6 +168,32 @@ body::before {
 	padding: 10px 10px 10px 5px;
 	position: relative;
 }
+.pnav-link {
+	display: block;
+	padding-top: 10px;
+	text-align: center;
+	text-decoration: none;
+	height: 100%;
+}
+.pnav-flex-item:nth-child(1) > .pnav-link {
+	color: hsl(45, 100%, 45%);
+}
+.pnav-flex-item:nth-child(2) > .pnav-link {
+	color: hsl(85, 100%, 45%);
+}
+.pnav-flex-item:nth-child(3) > .pnav-link {
+	color: hsl(125, 100%, 45%);
+}
+.pnav-flex-item:nth-child(4) > .pnav-link {
+	color: hsl(165, 100%, 45%);
+}
+.pnav-flex-item:nth-child(5) > .pnav-link {
+	color: hsl(205, 100%, 45%);
+}
+.pnav-flex-item:nth-child(6) > .pnav-link {
+	color: hsl(245, 100%, 45%);
+}
+
 .cont {
 	background-color: #EEE;
 	border-radius: 5px;
@@ -221,13 +249,13 @@ right corner, fixed above the content */
 @media screen and (min-width: 1081px) {
 	/* Layout CSS */
 	.page-grid {
-		grid-template-columns: 210px 1fr 210px;
+		grid-template-columns: 210px 1fr 84px;
 		grid-template-rows: 52px 250px 1fr 42px;
 		grid-template-areas:
-		"snav .    pnav"
-		"snav cont cont"
-		"tnav cont cont"
-		"foot foot foot";
+		"snav cont pnav"
+		"snav cont pnav"
+		"tnav cont ."
+		"tnav foot .";
 		grid-gap: 10px;
 	}
 	.snav-flex {
@@ -242,12 +270,11 @@ right corner, fixed above the content */
 		margin: 5px 0;
 	}
 	.pnav-flex {
-		flex-flow: row nowrap;
-		position: fixed;
-		top: 0;
+		flex-flow: column nowrap;
 	}
 	.pnav-flex-item {
-
+		height: 50px;
+		width: 84px;
 	}
 	.cont-grid {
 		padding: 25px;
@@ -262,11 +289,9 @@ right corner, fixed above the content */
 
 	/*Styling CSS */
 	.snav {
+		background-color: transparent;
 		position: fixed;
 		top: 0;
-	}
-	.snav, .pnav {
-		background-color: transparent;
 	}
 	.snav-head {
 		display: inline-block;
@@ -290,16 +315,18 @@ right corner, fixed above the content */
 		display: inline-block;
 	}
 	.tnav {
-		background-color: #444;
-		border-radius: 5px;
-		border: 2px solid #ABC;
-		box-shadow: -2px 0 4px 2px solid #ABC;
+		background: linear-gradient(0deg, #333, #555);
+		border: 1px solid #222;
+		box-shadow: 0 -2px 4px 2px #222;
 		position: fixed;
 		top: 225px;
 		left: 0;
-		bottom: 0px;
+		bottom: 10px;
 		width: 210px;
 		z-index: 1;
+	}
+	.tnav-toggle {
+		display: none;
 	}
 	.tnav-link {
 		border-radius: 0 15px 15px 0;
@@ -309,6 +336,34 @@ right corner, fixed above the content */
 	}
 	.tnav-link-text {
 		display: inline-block;
+	}
+	.pnav {
+		background: linear-gradient(0deg, #555, #333);
+		border: 1px solid #222;
+		border-radius: 5px 0 0 5px;
+		box-shadow: 0 2px 4px 2px #222;
+		position: fixed;
+		top: 10px;
+		right: 0;
+		height: 300px;
+	}
+	.pnav-link-text {
+		display: none;
+	}
+	.pnav-link-icon {
+		display: inline-block;
+	}
+	.pnav-link:hover .pnav-link-text {
+		display: block;
+	}
+	.pnav-link:hover {
+		background: linear-gradient(0deg, #777, #555);
+	}
+	.cont {
+		margin: 10px 0 0 0;
+	}
+	.foot {
+		border-radius: 5px 5px 0 0;
 	}
 	.foot-link-text {
 		display: inline-block;
@@ -341,8 +396,6 @@ right corner, fixed above the content */
 	.tnav-flex {
 		flex-flow: column nowrap;
 		padding: 0;
-		position: fixed;
-		top: 0;
 	}
 	.snav-flex-item, .tnav-flex-item {
 		margin: 5px 0;
@@ -389,6 +442,17 @@ right corner, fixed above the content */
 		display: none;
 		overflow: hidden;
 		white-space: nowrap;
+	}
+	.tnav-dropdown {
+
+	}
+	.tnav-toggle {
+		display: block;
+		height: 42px;
+		width: 42px;
+	}
+	.tnav-toggle:hover .tnav-flex {
+		display: block;
 	}
 	.tnav-link {
 		border-radius: 0 15px 15px 0;
