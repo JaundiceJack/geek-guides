@@ -56,8 +56,6 @@ body::before {
 .snav-link-icon {}
 .tnav {}
 .tnav-link {}
-.tnav-link-icon {}
-.tnav-link-text {}
 .pnav {}
 .pnav-link {}
 .pnav-link-icon {}
@@ -112,7 +110,7 @@ body::before {
 	padding-top: 10px;
 	text-align: center;
 }
-.snav > ul, .tnav > ul, .pnav > ul, .foot > ul{
+.snav > ul, .dropdown-content > ul, .pnav > ul, .foot > ul{
 	list-style-type: none;
 }
 .snav-link {
@@ -134,6 +132,11 @@ body::before {
 	width: 42px;
 	z-index: 1;
 }
+/* Due to the Pi icon being from a different font pack,
+It needs a little extra padding to center it with other 2 */
+.snav-link-icon > i.icon-raspberrypi {
+	padding-left: 5px;
+}
 .snav-link-text {
 	background: linear-gradient(0deg, #555, #777, #555);
 	border-radius: 20px 15px 15px 20px;
@@ -147,26 +150,15 @@ body::before {
 	z-index: 0;
 }
 .tnav {
-	overflow-y: scroll;
+	
 }
 .tnav-link {
-	background-color: transparent;
-	display: block;
-	text-decoration: none;
-}
-.tnav-link:hover {
-	background: linear-gradient(0deg, #555, #777);
-}
-.tnav-link-icon {
-	font-family: Orbitron, Monospace;
-	padding: 10px 10px 10px 5px;
-	position: relative;
-}
-.tnav-link-text {
+	background-color: #666;
 	color: white;
+	display: block;
 	font-family: Orbitron, Monospace;
-	padding: 10px 10px 10px 5px;
-	position: relative;
+	text-decoration: none;
+
 }
 .pnav-link {
 	display: block;
@@ -322,20 +314,15 @@ right corner, fixed above the content */
 		top: 225px;
 		left: 0;
 		bottom: 10px;
+		overflow-y: scroll;
 		width: 210px;
 		z-index: 1;
 	}
-	.tnav-toggle {
+	.dropdown-toggle {
 		display: none;
 	}
 	.tnav-link {
 		border-radius: 0 15px 15px 0;
-	}
-	.tnav-link-icon {
-		display: none;
-	}
-	.tnav-link-text {
-		display: inline-block;
 	}
 	.pnav {
 		background: linear-gradient(0deg, #555, #333);
@@ -443,27 +430,33 @@ right corner, fixed above the content */
 		overflow: hidden;
 		white-space: nowrap;
 	}
-	.tnav-dropdown {
-
-	}
-	.tnav-toggle {
+	/* tnav tablet dropdown */
+	.dropdown-toggle {
 		display: block;
 		height: 42px;
 		width: 42px;
-	}
-	.tnav-toggle:hover .tnav-flex {
-		display: block;
-	}
-	.tnav-link {
-		border-radius: 0 15px 15px 0;
+		background-color: #444;
+		color: white;
 		text-align: center;
 	}
-	.tnav-link-icon {
-		display: inline-block;
-	}
-	.tnav-link-text {
+	.dropdown-content {
+		background-color: #444;
 		display: none;
+		position: absolute;
+		min-width: 200px;
+		z-index: 1;
 	}
+	.tnav:hover .dropdown-content {
+		display: block;
+	}
+	.tnav:focus .dropdown-content {
+		display: block;
+	} /* end tnav dropdown */	
+	.tnav-link {
+		border-radius: 15px;
+		text-align: center;
+	}
+	
 	.cont {
 		margin: 0 10px 0 0;
 	}
@@ -564,12 +557,7 @@ right corner, fixed above the content */
 		height: 42px;
 		width: 42px;
 	}
-	.tnav-link-icon {
-		display: inline-block;
-	}
-	.tnav-link-text {
-		display: none;
-	}
+	
 	.cont {
 		margin: 0 10px;
 	}
